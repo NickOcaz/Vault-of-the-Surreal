@@ -1,8 +1,31 @@
 
 # Vault of the Surreal
 
+## Table of Contents
 
-## Purpose and Target Audience
+1. [Purpose](#purpose)
+2. [Target Audience](#target-audience)
+3. [UX](#ux)
+      - [Features](#features)
+4. [Tools and Technologies used](#tools-and-technologies-used)
+5. [Problem Statement](#problem-statement)
+6. [MVP Features](#mvp-features)
+7. [Future Features](#future-features)
+8. [Agile Development Process](#agile-development-process)
+      - [User Stories](#user-stories)
+9. [User Registration and Login](#user-registration-and-login)
+10. [Rate and Review Movies](#rate-and-review-movies)
+11. [Admin Manage Movies](#admin-manage-movies)
+12. [Database design](#database-design)
+13. [User Flow Diagram](#user-flow-diagram)
+14. [Prioritized Features for MVP](#prioritized-features-for-mvp)
+15. [Wireframes](#wireframes)
+16. [Testing](#testing)
+17. [Code Validation](#code-validation)
+18. [Creating a repository](#creating-a-repository)
+19. [Deployment for project](#deployment-for-project)
+20. [Future Enhancements (Post-MVP)](#future-enhancements-post-mvp)
+21. [Credits](#credits)
 
 The purpose of the 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, and rate their favorite 80s horror movies, while also discovering new films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
 
@@ -17,6 +40,11 @@ Collectors and Archivists: People interested in the preservation and collection 
 Casual Viewers: Users who occasionally watch horror movies and are curious to explore classic films from the 80s.
 
 Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, including fashion, music, and cinema.
+
+## UX
+### Features
+
+## Tools and Technologies used
 
 ## Problem Statement:
 How can "Vault of the Surreal" provide a secure, user-friendly, and engaging platform for 80s horror movie enthusiasts to log in, review, and rate films, while ensuring efficient database management for administrators and fostering a vibrant community?
@@ -58,7 +86,14 @@ Search and Filter:
 * Search bar to find movies by title, director, or keywords.
 * Filtering options to narrow down movies by genre, year, rating, etc.    
 
+
+## Agile Development Process
 ## User Stories:
+MoSCoW Prioritization <br>
+![link to project board](readme-images/userstories.png)
+
+<br>
+
 * As a User, I want to register and log in so that I can access personalized features of the site.
 
 * As a User, I want to browse and search for 80s horror movies so that I can discover films to watch and review.
@@ -121,7 +156,7 @@ Search and Filter:
 
 * System updates the movie database.
 
-
+## Database design
 ### Users Table
 | Attribute | Data Type   | Description      |
 |-----------|-------------|------------------|
@@ -139,7 +174,6 @@ Search and Filter:
 | Director   | VARCHAR(255)|                  |
 | Description| TEXT        |                  |
 | ImageURL   | VARCHAR(255)|                  |
-| Genre      | VARCHAR(255)|                  |
 
 ### Reviews Table
 | Attribute  | Data Type   | Description      |
@@ -162,7 +196,6 @@ Search and Filter:
 | IsAdmin          |                | Director        |
 +------------------+                | Description     |
       |                             | ImageURL        |
-      |                             | Genre           |
       |                             +-----------------+
       |                                   |
       |                                   |
@@ -223,6 +256,63 @@ Search and Filter:
 
 * Compliance with privacy policies and terms of service.
 
+## Wireframes
+
+![Wireframe](readme-images/wireframe.png)
+
+## Testing
+
+## Code Validation
+
+### Creating a repository
+
+## Deployment for project
+
+### Github
+Rpository inititally created on GitHub, Here's how
+
+1. Sign in to GitHub
+First, go to GitHub and log in to your account. If you don't have an account, you'll need to sign up.
+
+2. Create a New Repository
+Once you're logged in, click the + icon in the top-right corner of the page, and select New repository.
+
+You’ll be taken to the Create a new repository page.
+
+3. Set Up the Repository
+Repository name: Choose a name for your repository (Vault of the Surreal).
+
+Description (optional): You can add a brief description of your project.
+
+Public or Private: Select whether you want the repository to be public (visible to everyone) or private (only you and selected collaborators can see it). This project is set to public
+
+Initialize this repository with a README: It's often a good idea to check this box. It will create a README.md file in your repository, which you can edit to describe your project.
+
+### Gitpod
+
+Now that we have our repository on GitHub we can..
+
+2. Open the GitHub Repository
+Navigate to your GitHub repository in your web browser and copy the link for your repository.
+
+![Git Clone](readme-images/git-clone.png)
+<br>
+3. Launch Gitpod and select New Workspace
+<br>
+![Workspace](readme-images/workspace.png)
+<br>
+4. Here you can paste the url to the repositry and select your editor.
+<br>
+![New Workspace](readme-images/new-workspace.png)
+
+5. Now that the repo is open in our editor any addition to the code are submitted to the repo in the terminal with the commands...
+<br>
+git add .
+<br>
+git commit -m "Initial commit" (details of update)
+<br>
+git push
+
 ## Future Enhancements (Post-MVP):
 * User Profiles:
 
@@ -252,3 +342,4 @@ Search and Filter:
 
 * Filtering options to narrow down movies by genre, year, rating, etc.
 
+## Credits
