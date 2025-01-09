@@ -1,131 +1,254 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# Vault of the Surreal
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Purpose and Target Audience
 
-## Gitpod Reminders
+The purpose of the 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, and rate their favorite 80s horror movies, while also discovering new films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Target Audience:
 
-`python3 -m http.server`
+Horror Enthusiasts: Fans of the horror genre, particularly those with a nostalgic appreciation for 80s horror films.
 
-A blue button should appear to click: _Make Public_,
+Film Critics and Reviewers: Individuals who enjoy critiquing and discussing movies, sharing their insights and opinions on different films.
 
-Another blue button should appear to click: _Open Browser_.
+Collectors and Archivists: People interested in the preservation and collection of vintage horror movies, memorabilia, and related media.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+Casual Viewers: Users who occasionally watch horror movies and are curious to explore classic films from the 80s.
 
-A blue button should appear to click: _Make Public_,
+Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, including fashion, music, and cinema.
 
-Another blue button should appear to click: _Open Browser_.
+## Problem Statement:
+How can "Vault of the Surreal" provide a secure, user-friendly, and engaging platform for 80s horror movie enthusiasts to log in, review, and rate films, while ensuring efficient database management for administrators and fostering a vibrant community?
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+## MVP Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+User Authentication:
+* Secure user registration and login functionality.
+*    Password recovery options.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+Movie Database:
+* Admin interface for adding, editing, and deleting movies.
+* Basic movie details: title, year, director, brief description, and poster image.
+* Categorization and tagging of movies (e.g., genre, sub-genre, year).
 
-### Connecting your Mongo database
+User Reviews and Ratings:
+* Ability for users to submit reviews and ratings for movies.
+* Display of average ratings and recent reviews on movie pages.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+Community Interaction:
+* Comment sections for user discussions on movie pages.
+* CRUD Interaction
 
-------
+Responsive Design:
+* Mobile-friendly layout to ensure usability on various devices.
 
-## Release History
+Privacy and Security:
+* Data protection measures to safeguard user information.
+* Compliance with privacy policies and terms of service.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Future Features
 
-**June 18, 2024,** Add Mongo back into template
+User Profiles:
+* Basic user profile pages showing submitted reviews and ratings.
+* Profile customization options (e.g., profile picture, bio).
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+Search and Filter:
+* Search bar to find movies by title, director, or keywords.
+* Filtering options to narrow down movies by genre, year, rating, etc.    
 
-**May 28 2024:** Fix Mongo and Links installs
+## User Stories:
+* As a User, I want to register and log in so that I can access personalized features of the site.
 
-**April 26 2024:** Update node version to 16
+* As a User, I want to browse and search for 80s horror movies so that I can discover films to watch and review.
 
-**September 20 2023:** Update Python version to 3.9.17.
+* As a User, I want to rate and review movies so that I can share my opinions and see what others think.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* As a User, I want to view other users' reviews and ratings so that I can get insights into movies before watching them.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* As a User, I want to customize my profile so that I can share a bit about myself and my movie preferences.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* As an Admin, I want to add, edit, and delete movies in the database so that the movie collection is comprehensive and up-to-date.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+* As an Admin, I want to manage user accounts so that the platform remains secure and well-maintained.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* As an Admin, I want to moderate reviews and comments so that the community remains respectful and engaging.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* As a User, I want to receive notifications for replies and interactions so that I stay engaged with the community.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* As a User, I want to filter movies by genre, rating, and year so that I can easily find movies that interest me.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## User Registration and Login:
+### User
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* User navigates to the registration page.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* User enters email, password, and other required details.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* User submits the form.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* System sends a verification email.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* User verifies the email.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* User logs in with verified credentials.
 
-------
 
-## FAQ about the uptime script
+## Rate and Review Movies:
+### User
 
-**Why have you added this script?**
+* User navigates to a movie's detail page.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* User clicks on the "Write a Review" button.
 
-**How will this affect me?**
+* User enters a rating (e.g., 1-5 stars) and writes a review.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* User submits the review.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* System displays the review on the movie's page.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Admin Manage Movies:
+### Admin
 
-**So….?**
+* Admin logs in with admin credentials.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* Admin navigates to the movie management page.
 
-**Can I opt out?**
+* Admin clicks on "Add Movie" and enters movie details (title, year, description, image).
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* Admin submits the form.
 
+* System updates the movie database.
+
+
+### Users Table
+| Attribute | Data Type   | Description      |
+|-----------|-------------|------------------|
+| UserID    | INT         | Primary Key      |
+| Email     | VARCHAR(255)| Unique, Not Null |
+| Password  | VARCHAR(255)| Not Null         |
+| IsAdmin   | BOOLEAN     | Default FALSE    |
+
+### Movies Table
+| Attribute  | Data Type   | Description      |
+|------------|-------------|------------------|
+| MovieID    | INT         | Primary Key      |
+| Title      | VARCHAR(255)| Not Null         |
+| Year       | INT         |                  |
+| Director   | VARCHAR(255)|                  |
+| Description| TEXT        |                  |
+| ImageURL   | VARCHAR(255)|                  |
+| Genre      | VARCHAR(255)|                  |
+
+### Reviews Table
+| Attribute  | Data Type   | Description      |
+|------------|-------------|------------------|
+| ReviewID   | INT         | Primary Key      |
+| UserID     | INT         | Foreign Key      |
+| MovieID    | INT         | Foreign Key      |
+| Rating     | INT         |                  |
+| ReviewText | TEXT        |                  |
+| ReviewDate | TIMESTAMP   | Default CURRENT_TIMESTAMP |
+
+### User Flow Diagram
+```plaintext
++------------------+                +-----------------+
+|     Users        |                |     Movies      |
++------------------+                +-----------------+
+| UserID (PK)      |                | MovieID (PK)    |
+| Email            |                | Title           |
+| Password         |                | Year            |
+| IsAdmin          |                | Director        |
++------------------+                | Description     |
+      |                             | ImageURL        |
+      |                             | Genre           |
+      |                             +-----------------+
+      |                                   |
+      |                                   |
+      | One-to-Many                       |
+      |                                   |
+      |                                   |
++-------------------+                    +--------------------+
+|     Reviews       |                    |                    |
++-------------------+                    |                    |
+| ReviewID (PK)     |<-- Many-to-One --> | UserID (FK)        |
+| UserID (FK)       |                    |                    |
+| MovieID (FK)      |<-- Many-to-One --> | MovieID (FK)       |
+| Rating            |                    |                    |
+| ReviewText        |                    |                    |
+| ReviewDate        |                    |                    |
++-------------------+                    +--------------------+
+      | 
+      | 
+  Many-to-One
+      |
++-------------------+
+| Admin Functions  |
++-------------------+
+| Add Movie         |
+| Edit Movie        |
+| Delete Movie      |
+| Manage Users      |
+| Moderate Reviews  |
++-------------------+
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+## Prioritized Features for MVP:
+###User Authentication:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* Secure user registration and login functionality.
 
----
+* Password recovery options.
 
-Happy coding!
+### Movie Database Management:
+
+* Admin interface for adding, editing, and deleting movies.
+
+* Basic movie details: title, year, director, brief description, and poster image.
+
+### User Reviews and Ratings:
+
+* Ability for users to submit reviews and ratings for movies.
+
+* Display of average ratings and recent reviews on movie pages.
+
+### Responsive Design:
+
+* Mobile-friendly layout to ensure usability on various devices.
+
+### Privacy and Security:
+
+* Data protection measures to safeguard user information.
+
+* Compliance with privacy policies and terms of service.
+
+## Future Enhancements (Post-MVP):
+* User Profiles:
+
+* User profile pages showing submitted reviews and ratings.
+
+* Profile customization options (e.g., profile picture, bio).
+
+### Advanced Search and Filtering:
+
+* More advanced filtering options (e.g., by actor, release date, user ratings).
+
+### Social Media Integration:
+
+* Allow users to share reviews and ratings on social media platforms.
+
+### Analytics and Insights:
+
+* Admin dashboard with analytics on user engagement and movie ratings.
+
+### Movie Database Management:
+
+ Categorization and tagging of movies (e.g., genre, sub-genre, year).
+
+* Search and Filter:
+
+* Search bar to find movies by title, director, or keywords.
+
+* Filtering options to narrow down movies by genre, year, rating, etc.
+
