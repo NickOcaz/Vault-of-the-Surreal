@@ -1,33 +1,37 @@
 
 # Vault of the Surreal
+![Vault of the Surreal](readme-images/banner.png)
+
+The purpose of the 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, and rate their favorite 80s horror movies, while also discovering new films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
 
 ## Table of Contents
 
-1. [Purpose](#purpose)
-2. [Target Audience](#target-audience)
-3. [UX](#ux)
-      - [Features](#features)
-4. [Tools and Technologies used](#tools-and-technologies-used)
-5. [Problem Statement](#problem-statement)
-6. [MVP Features](#mvp-features)
-7. [Future Features](#future-features)
+1. [Target Audience](#target-audience)
+2. [UX](#ux)
+      * [Features](#features)
+      * [Hero Image](#hero-image)
+      * [Colors](#colors)
+3. [Planning with A.I.](#planning-with-ai)
+4. [AI-Prompted Image Generation](#ai-prompted-image-generation)
+5. [Tools and Technologies used](#tools-and-technologies-used)
+6. [Problem Statement](#problem-statement)
+7. [MVP Features](#mvp-features)
 8. [Agile Development Process](#agile-development-process)
-      - [User Stories](#user-stories)
+      * [User Stories](#user-stories)
 9. [User Registration and Login](#user-registration-and-login)
 10. [Rate and Review Movies](#rate-and-review-movies)
 11. [Admin Manage Movies](#admin-manage-movies)
-12. [Database design](#database-design)
+12. [Database Design](#database-design)
 13. [User Flow Diagram](#user-flow-diagram)
 14. [Prioritized Features for MVP](#prioritized-features-for-mvp)
 15. [Wireframes](#wireframes)
 16. [Testing](#testing)
 17. [Code Validation](#code-validation)
-18. [Creating a repository](#creating-a-repository)
-19. [Deployment for project](#deployment-for-project)
+18. [Creating the Repository](#creating-the-repository)
+19. [Deployment for Project](#deployment-for-project)
 20. [Future Enhancements (Post-MVP)](#future-enhancements-post-mvp)
-21. [Credits](#credits)
-
-The purpose of the 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, and rate their favorite 80s horror movies, while also discovering new films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
+21. [Future Features](#future-features)
+22. [Credits](#credits)
 
 ## Target Audience:
 
@@ -42,9 +46,30 @@ Casual Viewers: Users who occasionally watch horror movies and are curious to ex
 Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, including fashion, music, and cinema.
 
 ## UX
+
 ### Features
 
+## Hero image
+![Hero Image](readme-images/hero800px.png)
+
+## colors
+To ensure visual consistency, the color palette for the website is derived from the hero image.
+![Color Palette](readme-images/colours.png)
+
+# Planning with A.I.
+
+Brainstorming with GitHub Copilot was instrumental in developing the foundations for this project. By leveraging Copilot's AI-driven suggestions, we were able to quickly generate ideas for key features, user stories, and database design. This collaborative approach ensured that we covered all essential aspects of the project, from user authentication to movie database management, while also considering future enhancements. Copilot's ability to provide context-aware recommendations significantly streamlined the planning process, allowing us to focus on creating a comprehensive and engaging platform for 80s horror movie enthusiasts.
+
+## AI-Prompted Image Generation
+
+Using AI prompting for image generation, we aimed to create a hero image that captured the essence of 80s-style horror comic books. After experimenting with several AI-generated suggestions, we found the perfect image that embodied the retro horror aesthetic we desired. However, to make the image more usable for our website, we needed to manipulate it further in Gimp image software. This involved adjusting colors, enhancing details, and ensuring it seamlessly integrated with our site's design, ultimately resulting in a visually striking hero image that sets the tone for "Vault of the Surreal."
+
+
+
 ## Tools and Technologies used
+
+* Balsamiq - Wireframe design
+* Gimp - Image design and manipulation
 
 ## Problem Statement:
 How can "Vault of the Surreal" provide a secure, user-friendly, and engaging platform for 80s horror movie enthusiasts to log in, review, and rate films, while ensuring efficient database management for administrators and fostering a vibrant community?
@@ -76,20 +101,12 @@ Privacy and Security:
 * Data protection measures to safeguard user information.
 * Compliance with privacy policies and terms of service.
 
-## Future Features
-
-User Profiles:
-* Basic user profile pages showing submitted reviews and ratings.
-* Profile customization options (e.g., profile picture, bio).
-
-Search and Filter:
-* Search bar to find movies by title, director, or keywords.
-* Filtering options to narrow down movies by genre, year, rating, etc.    
-
-
 ## Agile Development Process
 ## User Stories:
 MoSCoW Prioritization <br>
+
+MoSCoW prioritization was used in this project to clearly define and manage the essential features and functionalities required for the "Vault of the Surreal" website. By categorizing tasks into Must-haves, Should-haves, Could-haves, and Won't-haves, the development team can focus on delivering the most critical aspects first, ensuring that the core objectives are met within the project timeline. This method helps in making informed decisions, balancing stakeholder expectations, and efficiently allocating resources to achieve a successful MVP launch.
+
 ![link to project board](readme-images/userstories.png)
 
 <br>
@@ -228,7 +245,7 @@ MoSCoW Prioritization <br>
 ```
 
 ## Prioritized Features for MVP:
-###User Authentication:
+### User Authentication:
 
 * Secure user registration and login functionality.
 
@@ -264,9 +281,7 @@ MoSCoW Prioritization <br>
 
 ## Code Validation
 
-### Creating a repository
-
-## Deployment for project
+## Creating the repository
 
 ### Github
 Rpository inititally created on GitHub, Here's how
@@ -287,6 +302,8 @@ Description (optional): You can add a brief description of your project.
 Public or Private: Select whether you want the repository to be public (visible to everyone) or private (only you and selected collaborators can see it). This project is set to public
 
 Initialize this repository with a README: It's often a good idea to check this box. It will create a README.md file in your repository, which you can edit to describe your project.
+
+## Deployment for project
 
 ### Gitpod
 
@@ -342,4 +359,11 @@ git push
 
 * Filtering options to narrow down movies by genre, year, rating, etc.
 
+## Future Features
+
+User Profiles:
+* Basic user profile pages showing submitted reviews and ratings.
+
 ## Credits
+
+* Code Institute - Codestar walkthrough project
