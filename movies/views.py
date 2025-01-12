@@ -5,4 +5,7 @@ from .models import Movie
 class MovieListView(generic.ListView):
     model = Movie
     template_name = "movie/movie_list.html"
-    context_object_name = "movie"
+    context_object_name = "movies"
+    
+    
+    
