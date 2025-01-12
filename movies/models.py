@@ -3,7 +3,7 @@ from django.db import models
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class Post(models.Model):
+class Movie(models.Model):
     MovieID = models.AutoField(primary_key=True)
     Title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=200, unique=True)
