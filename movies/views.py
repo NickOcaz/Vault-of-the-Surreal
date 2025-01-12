@@ -9,7 +9,7 @@ class MovieListView(generic.ListView):
     queryset = Movie.objects.all().order_by("Year") # filter year from oldest to newest
     template_name = "movie/index.html"
 #    context_object_name = "movies"
-    paginate_by = 12    
+    paginate_by = 6    
 
     
     
