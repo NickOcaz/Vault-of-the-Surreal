@@ -6,7 +6,7 @@ class MovieListView(generic.ListView):
     model = Movie
 ##    template_name = "movie/movie_list.html"
 ##    context_object_name = "movies"
-    queryset = Movie.objects.all()
+    queryset = Movie.objects.all().order_by("Year")
     template_name = "movie/movie_list.html"
     context_object_name = "movies"
     
