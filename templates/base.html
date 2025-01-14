@@ -66,6 +66,19 @@
                     </li>
                     {% endif %}
 <!-- -->
+
+<li>
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Logged in: {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">Please log in</p>
+        {% endif %}
+        
+
+
+</li>
+
                 </ul>
                 <span class="navbar-text text-muted">
                     Home of 80's Horror Movies
@@ -74,8 +87,7 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
-
+    
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
