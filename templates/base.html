@@ -8,7 +8,7 @@
 
 <head>
     <title>Vault of the Surreal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -67,18 +67,6 @@
                     {% endif %}
 <!-- -->
 
-<li>
-    <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">Logged in: {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3">Please log in</p>
-        {% endif %}
-        
-
-
-</li>
-
                 </ul>
                 <span class="navbar-text text-muted">
                     Home of 80's Horror Movies
@@ -87,7 +75,14 @@
         </div>
     </nav>
 
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Logged in: {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">Please log in</p>
+        {% endif %}
     
+
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
