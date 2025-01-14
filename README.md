@@ -8,16 +8,16 @@ The purpose of the 80s horror movie website, "Vault of the Surreal," is to creat
 
 1. [Target Audience](#target-audience)
 2. [UX](#ux)
-      * [Features](#features)
-      * [Hero Image](#hero-image)
-      * [Colors](#colors)
+   * [Features](#features)
+   * [Hero Image](#hero-image)
+   * [Colors](#colors)
 3. [Planning with A.I.](#planning-with-ai)
 4. [AI-Prompted Image Generation](#ai-prompted-image-generation)
 5. [Tools and Technologies used](#tools-and-technologies-used)
 6. [Problem Statement](#problem-statement)
 7. [MVP Features](#mvp-features)
 8. [Agile Development Process](#agile-development-process)
-      * [User Stories](#user-stories)
+   * [User Stories](#user-stories)
 9. [User Registration and Login](#user-registration-and-login)
 10. [Rate and Review Movies](#rate-and-review-movies)
 11. [Admin Manage Movies](#admin-manage-movies)
@@ -49,14 +49,14 @@ Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, 
 
 ### Features
 
-## Hero image
+### Hero Image
 ![Hero Image](readme-images/hero800px.png)
 
-## colors
+### Colors
 To ensure visual consistency, the color palette for the website is derived from the hero image.
 ![Color Palette](readme-images/colours.png)
 
-# Planning with A.I.
+## Planning with A.I.
 
 Brainstorming with GitHub Copilot was instrumental in developing the foundations for this project. By leveraging Copilot's AI-driven suggestions, we were able to quickly generate ideas for key features, user stories, and database design. This collaborative approach ensured that we covered all essential aspects of the project, from user authentication to movie database management, while also considering future enhancements. Copilot's ability to provide context-aware recommendations significantly streamlined the planning process, allowing us to focus on creating a comprehensive and engaging platform for 80s horror movie enthusiasts.
 
@@ -71,33 +71,33 @@ Using AI prompting for image generation, we aimed to create a hero image that ca
 * Balsamiq - Wireframe design
 * Gimp - Image design and manipulation
 
-## Problem Statement:
+## Problem Statement
 How can "Vault of the Surreal" provide a secure, user-friendly, and engaging platform for 80s horror movie enthusiasts to log in, review, and rate films, while ensuring efficient database management for administrators and fostering a vibrant community?
 
 
 ## MVP Features
 
-User Authentication:
+### User Authentication:
 * Secure user registration and login functionality.
-*    Password recovery options.
+* Password recovery options.
 
-Movie Database:
+### Movie Database:
 * Admin interface for adding, editing, and deleting movies.
 * Basic movie details: title, year, director, brief description, and poster image.
 * Categorization and tagging of movies (e.g., genre, sub-genre, year).
 
-User Reviews and Ratings:
+### User Reviews and Ratings:
 * Ability for users to submit reviews and ratings for movies.
 * Display of average ratings and recent reviews on movie pages.
 
-Community Interaction:
+### Community Interaction:
 * Comment sections for user discussions on movie pages.
 * CRUD Interaction
 
-Responsive Design:
+### Responsive Design:
 * Mobile-friendly layout to ensure usability on various devices.
 
-Privacy and Security:
+### Privacy and Security:
 * Data protection measures to safeguard user information.
 * Compliance with privacy policies and terms of service.
 
@@ -107,7 +107,7 @@ MoSCoW Prioritization <br>
 
 MoSCoW prioritization was used in this project to clearly define and manage the essential features and functionalities required for the "Vault of the Surreal" website. By categorizing tasks into Must-haves, Should-haves, Could-haves, and Won't-haves, the development team can focus on delivering the most critical aspects first, ensuring that the core objectives are met within the project timeline. This method helps in making informed decisions, balancing stakeholder expectations, and efficiently allocating resources to achieve a successful MVP launch.
 
-![link to project board](readme-images/userstories.png)
+![User Stories](readme-images/userstories.png)
 
 <br>
 
@@ -131,7 +131,7 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 
 * As a User, I want to filter movies by genre, rating, and year so that I can easily find movies that interest me.
 
-## User Registration and Login:
+## User Registration and Login
 ### User
 
 * User navigates to the registration page.
@@ -147,7 +147,7 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 * User logs in with verified credentials.
 
 
-## Rate and Review Movies:
+## Rate and Review Movies
 ### User
 
 * User navigates to a movie's detail page.
@@ -160,7 +160,7 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 
 * System displays the review on the movie's page.
 
-## Admin Manage Movies:
+## Admin Manage Movies
 ### Admin
 
 * Admin logs in with admin credentials.
@@ -173,11 +173,15 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 
 * System updates the movie database.
 
-## Database design
+## Database Design
+Working with Copilot we formulated a datbase structue to enable functionality of our MVP.
+Promptingh copilot to generate a Entity-Relationship Diagram sugeested which appears to be appropriate for this project.
+
 ### Users Table
 | Attribute | Data Type   | Description      |
 |-----------|-------------|------------------|
 | UserID    | INT         | Primary Key      |
+| username  | VARCHAR(255)! Unique, Not Null |
 | Email     | VARCHAR(255)| Unique, Not Null |
 | Password  | VARCHAR(255)| Not Null         |
 | IsAdmin   | BOOLEAN     | Default FALSE    |
@@ -187,10 +191,12 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 |------------|-------------|------------------|
 | MovieID    | INT         | Primary Key      |
 | Title      | VARCHAR(255)| Not Null         |
+| slug       ! Varchar     | Unique           |    
 | Year       | INT         |                  |
 | Director   | VARCHAR(255)|                  |
 | Description| TEXT        |                  |
 | ImageURL   | VARCHAR(255)|                  |
+| Status     | Integer     | Default FALSE    |
 
 ### Reviews Table
 | Attribute  | Data Type   | Description      |
@@ -201,48 +207,76 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 | Rating     | INT         |                  |
 | ReviewText | TEXT        |                  |
 | ReviewDate | TIMESTAMP   | Default CURRENT_TIMESTAMP |
+! Approved   | DateTime    | Auto Now Add     !
 
 ### User Flow Diagram
+
+
+
+Movie:
+
+Contains fields like MovieID (primary key), Title, slug, Year, Director, Description, ImageURL, and status.
+
+User:
+
+Contains fields like id (primary key), username, email, and password.
+
+Comment:
+
+Contains fields like id (primary key), movie_id (foreign key to MovieID), author_id (foreign key to User), body, approved, and created_on.
+
+as a diagram
+Here's a visual representation of the database design and relationships for the Movie, Comment, and User models:
+
 ```plaintext
-+------------------+                +-----------------+
-|     Users        |                |     Movies      |
-+------------------+                +-----------------+
-| UserID (PK)      |                | MovieID (PK)    |
-| Email            |                | Title           |
-| Password         |                | Year            |
-| IsAdmin          |                | Director        |
-+------------------+                | Description     |
-      |                             | ImageURL        |
-      |                             +-----------------+
-      |                                   |
-      |                                   |
-      | One-to-Many                       |
-      |                                   |
-      |                                   |
-+-------------------+                    +--------------------+
-|     Reviews       |                    |                    |
-+-------------------+                    |                    |
-| ReviewID (PK)     |<-- Many-to-One --> | UserID (FK)        |
-| UserID (FK)       |                    |                    |
-| MovieID (FK)      |<-- Many-to-One --> | MovieID (FK)       |
-| Rating            |                    |                    |
-| ReviewText        |                    |                    |
-| ReviewDate        |                    |                    |
-+-------------------+                    +--------------------+
-      | 
-      | 
-  Many-to-One
-      |
-+-------------------+
-| Admin Functions  |
-+-------------------+
-| Add Movie         |
-| Edit Movie        |
-| Delete Movie      |
-| Manage Users      |
-| Moderate Reviews  |
-+-------------------+
++----------------+              +---------------+              +----------------+
+|     Movie      |              |     User      |              |    Comment     |
++----------------+              +---------------+              +----------------+
+| MovieID (PK)   |              | id (PK)       |     1      * | id (PK)        |
+| Title          |              | username      | <---------  | movie_id (FK)  |
+| slug           |              | email         |              | author_id (FK) |
+| Year           |              | password      |              | body           |
+| Director       |              +---------------+              | approved       |
+| Description    |                                             | created_on     |
+| ImageURL       |                                        *--->| movie_id       |
+| status         |                                        *    | author_id      |
++----------------+                                        *    +----------------+
+      1                                               *       | 
+      |                                               *       |
+      |                                               *       |
+      v                                               *       v
++----------------+                                    +---------------+
+| Comment        |                                    | User          |
++----------------+                                    +---------------+
+| id (PK)        |                                    | id (PK)       |
+| movie_id (FK)  | <--------------------------------  | username      |
+| author_id (FK) |                                    | email         |
+| body           |                                    | password      |
+| approved       |                                    +---------------+
+| created_on     |
++----------------+
 ```
+Explanation:
+Movie:
+
+* Contains fields like MovieID (primary key), Title, slug, Year, Director, Description, ImageURL, and status.
+
+### User:
+
+* Contains fields like id (primary key), username, email, and password.
+
+### Comment:
+
+ *Contains fields like id (primary key), movie_id (foreign key to MovieID), author_id (foreign key to User), body, approved, and created_on.
+
+### Relationships:
+* One-to-Many Relationship:
+** One Movie can have multiple Comments.
+** Each Comment is associated with one Movie.
+
+* Many-to-One Relationship:
+** Each Comment is associated with one User.
+** One User can write multiple Comments.
 
 ## Prioritized Features for MVP:
 ### User Authentication:
@@ -281,10 +315,10 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 
 ## Code Validation
 
-## Creating the repository
+## Creating the Repository
 
 ### Github
-Rpository inititally created on GitHub, Here's how
+Repository initially created on GitHub, Here's how
 
 1. Sign in to GitHub
 First, go to GitHub and log in to your account. If you don't have an account, you'll need to sign up.
