@@ -13,9 +13,17 @@ class Movie(models.Model):
     Description = models.TextField(null=True, blank=True)
     ImageURL = models.CharField(max_length=255, null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    
 
+    class Meta:
+        ordering = ["-Year"]
+    
     def __str__(self):
-        return self.Title
+        return f"{self.Title} | Directed by {self.Director} | Year {self.Year}"
+    
+    
+#    def __str__(self):
+#        return self.Title
     
 class Comment(models.Model):
     movie = models.ForeignKey(
@@ -26,4 +34,11 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     
-    
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.created_on} by {self.author}"
+
+##   email = models.EmailField(max_length=254, null=True, blank=True)
+
