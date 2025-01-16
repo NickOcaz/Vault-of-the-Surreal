@@ -13,6 +13,4 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('Content',)
 
 
-# Register your models here.
-# admin.site.register(Movie)
 admin.site.register(Comment)
