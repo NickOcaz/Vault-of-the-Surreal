@@ -331,6 +331,14 @@ Many-to-One Relationship:
 
 ![Wireframe](readme-images/wireframe.png)
 
+
+## Debugging
+
+![Error URLs](readme-images/errors/1%20urls.png)
+
+
+During testing, I encountered a bug related to the URL pattern configuration. After exploring, I discovered the bug was caused by a slug link not being the last in the order of URL patterns. To fix this, I ensured that the slug pattern was placed at the end of the URL configuration list. This adjustment prevents conflicts with other URL patterns and ensures that the correct view is rendered when a slug is accessed.
+
 ## Testing
 
 text to go here
