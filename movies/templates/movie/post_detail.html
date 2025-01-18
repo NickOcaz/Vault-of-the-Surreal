@@ -15,9 +15,9 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in movie.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ Movie.title }}">
+                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                 {% endif %}
                 </div>
             </div>

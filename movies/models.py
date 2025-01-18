@@ -1,6 +1,8 @@
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -13,12 +15,13 @@ class Movie(models.Model):
     description = models.TextField(null=True, blank=True)
     imageURL = models.CharField(max_length=255, null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    
+    featured_image = CloudinaryField('image', default='placeholder')
+        
     class Meta:
         ordering = ["-year"]
     
     def __str__(self):
-        return f"{self.Title} | Directed by {self.director} | year {self.year}"
+        return f"{self.title} | Directed by {self.director} | year {self.year}"
     
         
 class Comment(models.Model):

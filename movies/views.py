@@ -18,7 +18,10 @@ class MovieListView(generic.ListView):
 def post_detail(request, slug):
 
     post = get_object_or_404(Movie, slug=slug)
-    return render(request, "movie/post_detail.html", {"movie": post})
+    return render(
+        request, "movie/post_detail.html", 
+        {"movie": post}
+        )
     
     
 #added this to allow users to add comments to a movie
