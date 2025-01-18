@@ -9,19 +9,19 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for Movie in movies %}
+                {% for movie in movies %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                            <a href="{% url 'post_detail' Movie.Slug %}" class="post-link">
-                                <h2 class="card-title">{{ Movie.Title }}</h2>
+                            <a href="{% url 'post_detail' movie.slug %}" class="post-link">
+                                <h2 class="card-title">{{ movie.title }}</h2>
                             </a>
-                            <p class="card-title">{{ Movie.Year }}</h2>
+                            <p class="card-title">{{ movie.year }}</p>
                             </a>
                             
                             <div class="image-flash">
-                                <p class="author">Director: {{ Movie.Director }}</p>
+                                <p class="author">Director: {{ movie.director }}</p>
                             </div>
                         </div>
                         </div>

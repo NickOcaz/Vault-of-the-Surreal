@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='movie',
-            options={'ordering': ['-Year']},
+            options={'ordering': ['-year']},
         ),
     ]

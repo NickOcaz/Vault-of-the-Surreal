@@ -5,20 +5,20 @@ from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Movie(models.Model):
-    MovieID = models.AutoField(primary_key=True)
-    Title = models.CharField(max_length=255)
-    Slug = models.SlugField(max_length=200, unique=True)
-    Year = models.IntegerField(null=True, blank=True)
-    Director = models.CharField(max_length=255, null=True, blank=True)
-    Description = models.TextField(null=True, blank=True)
-    ImageURL = models.CharField(max_length=255, null=True, blank=True)
-    Status = models.IntegerField(choices=STATUS, default=0)
+    movieID = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=200, unique=True)
+    year = models.IntegerField(null=True, blank=True)
+    director = models.CharField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    imageURL = models.CharField(max_length=255, null=True, blank=True)
+    status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
-        ordering = ["-Year"]
+        ordering = ["-year"]
     
     def __str__(self):
-        return f"{self.Title} | Directed by {self.Director} | Year {self.Year}"
+        return f"{self.Title} | Directed by {self.director} | year {self.year}"
     
         
 class Comment(models.Model):
@@ -34,4 +34,4 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Comment {self.created_on} by {self.author}"
+        return f"Comment {self.body} by {self.author}"
