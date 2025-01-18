@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -13,9 +12,9 @@ class Movie(models.Model):
     year = models.IntegerField(null=True, blank=True)
     director = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    imageURL = models.CharField(max_length=255, null=True, blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
+    status = models.IntegerField(choices=STATUS, default=0)
+    
         
     class Meta:
         ordering = ["-year"]
