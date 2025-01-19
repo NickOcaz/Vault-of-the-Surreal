@@ -14,14 +14,12 @@ class Movie(models.Model):
     description = models.TextField(null=True, blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
-    
-        
+
     class Meta:
         ordering = ["-year"]
-    
+
     def __str__(self):
         return f"{self.title} | Directed by {self.director} | year {self.year}"
-    
         
 class Comment(models.Model):
     movie = models.ForeignKey(
