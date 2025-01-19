@@ -1,13 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.contrib import messages
-from django.urls import reverse
 from django.views import generic
+from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.db.models import Count  # Import Count
 from .models import Movie, Comment
-from django.urls import path
-from . import views
 from .forms import CommentForm
+from django.db.models import Count  # Import Count
 
 #movie details
 
@@ -61,7 +58,7 @@ def comment_edit(request, slug, comment_id):
     if request.method == "POST":
     
         queryset = Movie.objects.filter(status=1)
-        post = get_object_or_404(Movie, slug=slug)
+        post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
