@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<h1>The Vault</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -17,16 +18,19 @@
                                 <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                                 {% endif %}
                             </div>
-                            <!-- Card details -->
                             <div class="image-flash">
                                 <a href="{% url 'post_detail' movie.slug %}" class="post-link">
                                     <h2 class="card-title">{{ movie.title }}</h2>
                                 </a>
+
+                                <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
                                 <p>Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
-                                <p class="card-title">{{ movie.year }}</p>
-                                <p class="author">Director: {{ movie.director }}</p>
+                                <p>{{ movie.comments.count }} Comments</p>
+                                {% if not movie.is_approved and movie.author == user %}
+                                <p class="text-warning">This post is a draft and awaiting approval.</p>
+                                {% endif %}
                             </div>
-                            <p>{{ movie.comment_count }} Comments</p>
+                            
                         </div>
                     </div>
                 </div>

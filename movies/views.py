@@ -6,6 +6,7 @@ from .models import Movie, Comment, Rating
 from .forms import CommentForm, RatingForm
 from django.db.models import Count, Avg
 
+
 class MovieListView(generic.ListView):
     model = Movie
     template_name = "movie/index.html"
@@ -19,39 +20,44 @@ class MovieListView(generic.ListView):
 def post_detail(request, slug):
     queryset = Movie.objects.filter(status=1)
     movie = get_object_or_404(Movie, slug=slug)
-    comments = movie.comments.order_by('-created_on')
+    if request.user.is_authenticated:
+        comments = movie.comments.filter(approved=True).union(
+            movie.comments.filter(author=request.user)
+        ).order_by('-created_on')
+    else:
+        comments = movie.comments.filter(approved=True).order_by('-created_on')
     comment_count = comments.count()
     rating_form = RatingForm()
     user_rating = None
 
     if request.user.is_authenticated:
         user_rating = Rating.objects.filter(movie=movie, user=request.user).first()
-
-    if request.method == "POST":
-        if 'comment_form' in request.POST:
-            comment_form = CommentForm(data=request.POST)
-            if comment_form.is_valid():
-                comment = comment_form.save(commit=False)
-                comment.author = request.user
-                comment.movie = movie
-                comment.save()
-                messages.add_message(request, messages.SUCCESS, 'Comment submitted and awaiting approval')
-                return redirect('post_detail', slug=slug)
-        elif 'rating_form' in request.POST:
-            rating_form = RatingForm(data=request.POST)
-            if rating_form.is_valid():
-                rating = rating_form.save(commit=False)
-                rating.user = request.user
-                rating.movie = movie
-                existing_rating = Rating.objects.filter(movie=movie, user=request.user).first()
-                if existing_rating:
-                    existing_rating.score = rating.score
-                    existing_rating.save()
-                    messages.add_message(request, messages.SUCCESS, 'Rating updated')
-                else:
-                    rating.save()
-                    messages.add_message(request, messages.SUCCESS, 'Rating submitted')
-                return redirect('post_detail', slug=slug)
+        
+        if request.method == "POST":
+            if 'comment_form' in request.POST:
+                comment_form = CommentForm(data=request.POST)
+                if comment_form.is_valid():
+                    comment = comment_form.save(commit=False)
+                    comment.author = request.user
+                    comment.movie = movie
+                    comment.save()
+                    messages.add_message(request, messages.SUCCESS, 'Comment submitted and awaiting approval')
+                    return redirect('post_detail', slug=slug)
+            elif 'rating_form' in request.POST:
+                rating_form = RatingForm(data=request.POST)
+                if rating_form.is_valid():
+                    rating = rating_form.save(commit=False)
+                    rating.user = request.user
+                    rating.movie = movie
+                    existing_rating = Rating.objects.filter(movie=movie, user=request.user).first()
+                    if existing_rating:
+                        existing_rating.score = rating.score
+                        existing_rating.save()
+                        messages.add_message(request, messages.SUCCESS, 'Rating updated')
+                    else:
+                        rating.save()
+                        messages.add_message(request, messages.SUCCESS, 'Rating submitted')
+                    return redirect('post_detail', slug=slug)
 
     comment_form = CommentForm()
 
@@ -66,8 +72,7 @@ def post_detail(request, slug):
     })
 
 def comment_edit(request, slug, comment_id):
-    queryset = Movie.objects.filter(status=1)
-    movie = get_object_or_404(queryset, slug=slug)
+    movie = get_object_or_404(Movie, slug=slug, status=1)
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST, instance=comment)
@@ -83,8 +88,8 @@ def comment_edit(request, slug, comment_id):
         comment_form = CommentForm(instance=comment)
     return render(request, "movie/post_detail.html", {
         "movie": movie,
-        "comments": movie.comments.order_by('-created_on'),
-        "comment_count": movie.comments.count(),
+        "comments": movie.comments.filter(approved=True).order_by('-created_on'),
+        "comment_count": movie.comments.filter(approved=True).count(),
         "comment_form": comment_form,
         "rating_form": RatingForm(),
         "user_rating": Rating.objects.filter(movie=movie, user=request.user).first(),
