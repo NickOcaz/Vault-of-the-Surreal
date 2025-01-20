@@ -53,6 +53,7 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
+                {% if comment.approved or comment.author == user %}
                 <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
@@ -69,11 +70,29 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <a href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}" class="btn btn-edit">Edit</a>
-                    <a href="{% url 'comment_delete' slug=movie.slug comment_id=comment.id %}" class="btn btn-delete">Delete</a>
+                    <a href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}" class="btn btn-edit" comment_id="{{ comment.id }}">Edit</a>
+                    <a href="{% url 'comment_delete' slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a>
                     {% endif %}
                 </div>
+                {% endif %}
                 {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Comment Form -->
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3>Leave a Comment:</h3>
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <form method="post" id="commentForm">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    <button type="submit" id="submitButton" name="comment_form" class="btn btn-primary">Submit Comment</button>
+                </form>
+                {% else %}
+                <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+                {% endif %}
             </div>
         </div>
     </div>
