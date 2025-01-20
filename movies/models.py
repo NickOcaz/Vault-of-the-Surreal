@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Movie(models.Model):
@@ -15,23 +14,35 @@ class Movie(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
 
-    class Meta:
-        ordering = ["-year"]
-
     def __str__(self):
-        return f"{self.title} | Directed by {self.director} | year {self.year}"
-        
+        return self.title
+
+    def average_rating(self):
+        ratings = self.ratings.all()
+        if ratings:
+            return sum(rating.score for rating in ratings) / len(ratings)
+        return 0
+
 class Comment(models.Model):
-    movie = models.ForeignKey(
-        Movie, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
     body = models.TextField()
-    approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    
+    approved = models.BooleanField(default=False)
+
     class Meta:
         ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
+
+class Rating(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="ratings")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="ratings")
+    score = models.IntegerField()
+
+    class Meta:
+        unique_together = ('movie', 'user')
+
+    def __str__(self):
+        return f"Rating {self.score} by {self.user} for {self.movie}"

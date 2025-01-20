@@ -1,39 +1,32 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for movie in movies %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-<!--card images -->
-<div class="image-container">
-    {% if "placeholder" in movie.featured_image.url %}
-        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-        alt="placeholder image">
-    {% else %}
-        <img class="card-img-top" src=" {{ movie.featured_image.url }}"
-        alt="{{ movie.title }}">
-    {% endif %}                        
-<!--card details -->
-                                <div class="image-flash">
-                                    
-                                    <a href="{% url 'post_detail' movie.slug %}" class="post-link">                                   
-                                        <h2 class="card-title">{{ movie.title }}</h2>
-                                    </a>
-                                    <p class="card-title">{{ movie.year }}</p>
-                                    </a>
-                                    <p class="author">Director: {{ movie.director }}</p>
-                                </div>
-                                <p>{{ movie.comment_count }} Comments</p>
+                            <!-- Card images -->
+                            <div class="image-container">
+                                {% if "placeholder" in movie.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
+                                {% endif %}
                             </div>
+                            <!-- Card details -->
+                            <div class="image-flash">
+                                <a href="{% url 'post_detail' movie.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ movie.title }}</h2>
+                                </a>
+                                <p>Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
+                                <p class="card-title">{{ movie.year }}</p>
+                                <p class="author">Director: {{ movie.director }}</p>
+                            </div>
+                            <p>{{ movie.comment_count }} Comments</p>
                         </div>
                     </div>
                 </div>
@@ -45,28 +38,5 @@
             </div>
         </div>
     </div>
-
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %}
-
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
-
-<!-- index.html content ends here -->
-{% endblock %}
-
-{% block extras %}
-
-
 {% endblock %}
