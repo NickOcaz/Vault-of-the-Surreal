@@ -6,3 +6,7 @@
         color: rgb(118, 0, 0);
         text-decoration: none;
     }
+    
+    .image-container, img {
+        height: 100px;
+    }

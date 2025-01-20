@@ -13,17 +13,23 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
-                                
-                                <img class="card-img-top" src="{% static 'images/default.png' %}"
-                                    alt="placeholder image">
-                                <a href="{% url 'post_detail' movie.slug %}" class="post-link">                                   
-                                    <h2 class="card-title">{{ movie.title }}</h2>
-                                </a>
-                                <p class="card-title">{{ movie.year }}</p>
-                                </a>
-
+<!--card images -->
+<div class="image-container">
+    {% if "placeholder" in movie.featured_image.url %}
+        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+        alt="placeholder image">
+    {% else %}
+        <img class="card-img-top" src=" {{ movie.featured_image.url }}"
+        alt="{{ movie.title }}">
+    {% endif %}                        
+<!--card details -->
                                 <div class="image-flash">
+                                    
+                                    <a href="{% url 'post_detail' movie.slug %}" class="post-link">                                   
+                                        <h2 class="card-title">{{ movie.title }}</h2>
+                                    </a>
+                                    <p class="card-title">{{ movie.year }}</p>
+                                    </a>
                                     <p class="author">Director: {{ movie.director }}</p>
                                 </div>
                                 <p>{{ movie.comment_count }} Comments</p>
@@ -36,10 +42,10 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
