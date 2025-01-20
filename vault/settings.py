@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary_storage',
     'cloudinary',
+    'whitenoise.runserver_nostatic',
     'movies',   
 ]
 
