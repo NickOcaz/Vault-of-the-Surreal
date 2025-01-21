@@ -1,0 +1,32 @@
+.main-bg {
+    background-color: rgb(12, 12, 12);
+    color: rgb(78, 0, 0);
+}
+h1 {
+    color: rgb(21, 255, 0);
+}
+
+a {
+    color: rgb(118, 0, 0);
+    text-decoration: none;
+}
+
+.page-wrapper {
+
+    text-align: center;
+}
+
+main {
+        max-width: 80%;
+        margin: 0 auto;
+
+}
+
+.card-body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 0 solid rgb(0, 0, 0);
+    box-shadow: 0 10px 10px rgb(255, 0, 0);
+}

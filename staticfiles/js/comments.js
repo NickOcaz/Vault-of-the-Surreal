@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// const editButtons = document.getElementsByClassName("btn-edit");
+const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");

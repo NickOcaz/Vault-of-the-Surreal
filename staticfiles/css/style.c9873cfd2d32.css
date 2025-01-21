@@ -19,6 +19,7 @@ a {
 main {
         max-width: 80%;
         margin: 0 auto;
+
 }
 
 .navbar {
@@ -28,16 +29,6 @@ main {
     color: rgb(255, 255, 255);
     padding: 20px;
     margin-bottom: 1rem;
-}
-
-.nav-item {
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
-}
-
-.text-end {
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
 }
 
 .brand {

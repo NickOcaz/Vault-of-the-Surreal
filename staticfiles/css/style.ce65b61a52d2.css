@@ -21,7 +21,7 @@ main {
         margin: 0 auto;
 }
 
-.navbar {
+.navbarText {
     color: #ffffff;
     background: linear-gradient(135deg, rgb(139, 0, 0), rgb(78, 0, 0), rgb(139, 0, 0));
     font-size: large;

@@ -30,14 +30,32 @@ main {
     margin-bottom: 1rem;
 }
 
-.nav-item {
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
+.navbar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(139, 0, 0, 1) 0%, rgba(139, 0, 0, 0.5) 50%, rgba(139, 0, 0, 0) 100%);
+    margin-top: -10px;
+    z-index: -1;
+    animation: drip 2s infinite;
 }
 
-.text-end {
+@keyframes drip {
+    0% {
+        height: 20px;
+    }
+    50% {
+        height: 30px;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+.nav-link {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
 }
 
 .brand {

@@ -30,14 +30,8 @@ main {
     margin-bottom: 1rem;
 }
 
-.nav-item {
+.nav {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
-}
-
-.text-end {
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
 }
 
 .brand {
