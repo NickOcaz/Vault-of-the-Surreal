@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>The Vault</h1>
+<div class="row align-items-center">
+    <div class="col-md-3">
+        <img src="{% static 'images/default.png' %}" alt="Default Image" class="img-fluid">
+    </div>
+    <div class="col-md-9">
+        <h2>Welcome to HELL!</H2>
+        <p>This page is the ultimate destination for fans of 80's cult and best horror movies. Dive into the world of classic horror films that defined a generation and continue to thrill audiences today.</p>
+        <p>Join our community to discuss your favorite classic horror movies, share your thoughts, and connect with fellow enthusiasts. Sign up now to be a part of the conversation and keep the spirit of 80's horror alive!</p>
+    </div>
+</div>
+
 <div class="container-fluid">
+    <h1>The Vault</h1>
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -10,6 +21,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            
                             <!-- Card images -->
                             <div class="image-container">
                                 {% if "placeholder" in movie.featured_image.url %}

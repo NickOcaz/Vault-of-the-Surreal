@@ -52,7 +52,11 @@ Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, 
 
 ### Hero Image
 
-![Hero Image](readme-images/hero800px.png)
+![Hero Image](readme-images/banner.webp)
+
+### Branding
+
+![Branding](readme-images/hero800px.png)
 
 ### Colors
 

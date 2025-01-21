@@ -1,4 +1,3 @@
-// Ensure DOM is Loaded: Make sure the script runs after the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', function() {
   var element = document.querySelector('.my-element');
   if (element) {
