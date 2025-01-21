@@ -71,7 +71,37 @@
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
                     <a href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}" class="btn btn-edit" comment_id="{{ comment.id }}">Edit</a>
-                    <a href="{% url 'comment_delete' slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a>
+                    <a href="#" class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-comment-id="{{ comment.id }}">Delete</a>
+                <!-- Delete Confirmation Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Send to the grave?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    var deleteModal = document.getElementById('deleteModal');
+                    deleteModal.addEventListener('show.bs.modal', function (event) {
+                        var button = event.relatedTarget;
+                        var commentId = button.getAttribute('data-comment-id');
+                        var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
+                        confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
+                    });
+                </script>
+                   
+                 <!--   <a href="{% url 'comment_delete'  slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a> -->
                     {% endif %}
                 </div>
                 {% endif %}
