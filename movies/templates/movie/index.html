@@ -34,7 +34,6 @@
                                 <a href="{% url 'post_detail' movie.slug %}" class="post-link">
                                     <h2 class="card-title">{{ movie.title }}</h2>
                                 </a>
-
                                 <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
                                 <p>Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
                                 <p>{{ movie.comments.count }} Comments</p>
@@ -60,7 +59,6 @@
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
             {% endif %}
-
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
             {% endif %}

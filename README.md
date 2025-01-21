@@ -47,6 +47,9 @@ Casual Viewers: Users who occasionally watch horror movies and are curious to ex
 Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, including fashion, music, and cinema.
 
 ## UX
+### Wireframes
+
+![Wireframe](readme-images/wireframe.png)
 
 ### Features
 
@@ -338,10 +341,23 @@ Many-to-One Relationship:
 
 ## Debugging
 
+1.
 ![Error URLs](readme-images/errors/1%20urls.png)
 
+### Solution.
+ I encountered a bug related to the URL pattern configuration. After exploring, I discovered the bug was caused by a slug link not being the last in the order of URL patterns. To fix this, I ensured that the slug pattern was placed at the end of the URL configuration list. This adjustment prevents conflicts with other URL patterns and ensures that the correct view is rendered when a slug is accessed.
 
-During testing, I encountered a bug related to the URL pattern configuration. After exploring, I discovered the bug was caused by a slug link not being the last in the order of URL patterns. To fix this, I ensured that the slug pattern was placed at the end of the URL configuration list. This adjustment prevents conflicts with other URL patterns and ensures that the correct view is rendered when a slug is accessed.
+2.
+![Invalid Python](readme-images/errors/invalid_python.png)
+
+### Solution.
+
+Stack overflow offered a working suggestion whichj i corrected within the runtime.txt file.
+
+![Stack Overflow Solution](readme-images/stackoverflow.png)
+
+
+
 
 ## Testing
 

@@ -99,9 +99,8 @@
                         var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
                         confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
                     });
-                </script>
-                   
-                 <!--   <a href="{% url 'comment_delete'  slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a> -->
+                </script>                  
+                <!--   <a href="{% url 'comment_delete'  slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a> -->
                     {% endif %}
                 </div>
                 {% endif %}
