@@ -1,11 +1,7 @@
 .main-bg {
     background-color: rgb(19, 19, 19);
-    color: rgb(78, 0, 0);
+    color: rgb(0, 245, 0);
 }
-h1 {
-    color: rgb(21, 255, 0);
-}
-
 a {
     color: rgb(118, 0, 0);
     text-decoration: none;
