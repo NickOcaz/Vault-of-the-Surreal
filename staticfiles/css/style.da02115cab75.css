@@ -1,20 +1,16 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
-    font-display: swap;
-    letter-spacing: 0.2em;
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
 }
 
 .main-bg {
     background-color: rgb(10, 10, 10);
     color: rgb(255, 255, 255);
-    background: linear-gradient( rgb(0, 0, 0), rgb(29, 0, 0), rgb(0, 0, 0));
+    background: linear-gradient(135deg, rgb(10, 10, 25), rgb(29, 0, 0), rgb(10, 10, 25));
     }  
-    
-
 
 .hero {
-    background-image: url(/static/images/banner.webp);
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
     background-size: 150%; /* Zoom out the image */
     background-position: center;
     overflow: hidden;
@@ -47,21 +43,21 @@ ul {
 }
 
 h1 {
-    color: rgb(92, 0, 0);
+    color: rgb(21, 255, 0);
     font-family: 'MyCustomFont';
-    font-size: 3rem;
 }
 
-h2{
+h2,
+h3,
+h5 {
     font-family: 'MyCustomFont';
-    color: #00a82a;
+    color: #FF0000;
     background: linear-gradient(135deg, rgb(43, 43, 43), rgb(0, 0, 0), rgb(41, 41, 41));
     border-radius: 0 0 3rem 3rem;
 }
 
 h3 {
-    font-family: 'MyCustomFont';
-    color: #06c200;
+    color: #FF0000;
     background-color: #1A1A1A;
 }
 
@@ -90,10 +86,6 @@ h3 {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-}
-
 .nav-link {
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -114,6 +106,10 @@ main {
         
 }
 
+.image-container {
+    background-color: rgb(126, 10, 10);
+}
+
 .navbar {
     color: #ffffff;
     background: linear-gradient(135deg, rgb(139, 0, 0), rgb(58, 0, 0), rgb(139, 0, 0));
@@ -127,7 +123,6 @@ main {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
 }
-
 
 .nav-item {
     color: rgb(255, 255, 255);
@@ -167,10 +162,6 @@ main {
 }
 
 .card-img-top:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
     transition: transform 1s;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }

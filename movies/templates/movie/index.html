@@ -3,17 +3,17 @@
 {% block content %}
 <div class="row align-items-center">
     <div class="col-md-3">
-        <img src="{% static 'images/default.png' %}" alt="Default Image" class="img-fluid">
+        <img src="{% static 'images/VAULT-1.webp' %}" alt="Vault of the Surreal branding" class="img-fluid">
     </div>
     <div class="col-md-9">
-        <h2>Welcome to HELL!</H2>
+        <h1>Welcome to HELL</H1>
         <p>This page is the ultimate destination for fans of 80's cult and best horror movies. Dive into the world of classic horror films that defined a generation and continue to thrill audiences today.</p>
         <p>Join our community to discuss your favorite classic horror movies, share your thoughts, and connect with fellow enthusiasts. Sign up now to be a part of the conversation and keep the spirit of 80's horror alive!</p>
     </div>
 </div>
 
 <div class="container-fluid">
-    <h1>The Vault</h1>
+    <h2>The Vault</h2>
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -23,16 +23,17 @@
                         <div class="card-body">
                             
                             <!-- Card images -->
-                            <div class="image-container">
-                                {% if "placeholder" in movie.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
-                                {% endif %}
-                            </div>
+                            
                             <div class="image-flash">
                                 <a href="{% url 'post_detail' movie.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ movie.title }}</h2>
+                                    <div class="image-container">
+                                        {% if "placeholder" in movie.featured_image.url %}
+                                        <img class="card-img-top" src="{% static 'images/default.png' %}" alt="Default movie placeholder image">
+                                        {% else %}
+                                        <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
+                                        {% endif %}
+                                    </div>
+                                    <h3 class="card-title">{{ movie.title }}</h3>
                                 </a>
                                 <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
                                 <p>Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
@@ -57,10 +58,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" id = "hands" class="page-link"><img src="{% static 'images/prev_button.webp' %}" alt="Previous"></a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" id = "hands" class="page-link"><img src="{% static 'images/next_button.webp' %}" alt="Next"></a></li>
             {% endif %}
         </ul>
     </nav>
