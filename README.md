@@ -356,8 +356,12 @@ Stack overflow offered a working suggestion whichj i corrected within the runtim
 
 ![Stack Overflow Solution](readme-images/stackoverflow.png)
 
+3,
+![Uncaught TypeError](readme-images/uncaught_type_error.png)
 
+### Solution
 
+This error was caused by an undefined variable being accessed in the JavaScript code. To resolve this issue, I reviewed the code to ensure all variables were properly defined before being used.
 
 ## Testing
 

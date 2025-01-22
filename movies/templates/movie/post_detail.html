@@ -11,13 +11,13 @@
                 <h1 class="post-title">{{ movie.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ movie.year }} | {{ movie.director }}</p>
-                <p>Average Rating: {{ average_rating|floatformat:1 }}/10</p>
+                <p>Average Rating: {{ average_rating }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if movie.featured_image %}
-                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
+                {% if "placeholder" in movie.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src="{% static '/images/default.png' %}" alt="placeholder image">
+                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                 {% endif %}
             </div>
         </div>
@@ -26,7 +26,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4 mt-3 left top">
+        <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
@@ -40,7 +40,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comments.count }}
+                <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
         <div class="col-12">
@@ -53,8 +53,7 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
-                {% if comment.approved or comment.author == user %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
+                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
@@ -72,38 +71,8 @@
                     {% if user.is_authenticated and comment.author == user %}
                     <a href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}" class="btn btn-edit" comment_id="{{ comment.id }}">Edit</a>
                     <a href="#" class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-comment-id="{{ comment.id }}">Delete</a>
-                <!-- Delete Confirmation Modal -->
-                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel">Send to the grave?</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Are you sure?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    var deleteModal = document.getElementById('deleteModal');
-                    deleteModal.addEventListener('show.bs.modal', function (event) {
-                        var button = event.relatedTarget;
-                        var commentId = button.getAttribute('data-comment-id');
-                        var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
-                        confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
-                    });
-                </script>                  
-                <!--   <a href="{% url 'comment_delete'  slug=movie.slug comment_id=comment.id %}" class="btn btn-delete" comment_id="{{ comment.id }}">Delete</a> -->
                     {% endif %}
                 </div>
-                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -143,8 +112,32 @@
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block extras %}
-<script src="{% static 'js/comments.js' %}"></script>
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Send to the grave?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var commentId = button.getAttribute('data-comment-id');
+        var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
+        confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
+    });
+</script>
 {% endblock %}
