@@ -28,22 +28,21 @@
 </div>
 
 <div class="container">
-  
     <!-- Displaying Comments and Comment Form side by side -->
     <div class="row">
         <div class="col-md-6 card mb-4 mt-3">
             <h3>Comments:</h3>
-              <!-- Displaying count of comments -->
-    <div class="row">
-        <div class="col-12">
-            <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
-            </strong>
-        </div>
-        <div class="col-12">
-            <hr>
-        </div>
-    </div>
+            <!-- Displaying count of comments -->
+            <div class="row">
+                <div class="col-12">
+                    <strong class="text-secondary">
+                        <i class="far fa-comments"></i> {{ comment_count }}
+                    </strong>
+                </div>
+                <div class="col-12">
+                    <hr>
+                </div>
+            </div>
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
@@ -53,7 +52,7 @@
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <div id="comment{{ comment.id }}">
+                    <div id="comment-body-{{ comment.id }}">
                         {{ comment.body | linebreaks }}
                     </div>
                     {% if not comment.approved and comment.author == user %}
@@ -84,7 +83,24 @@
             </div>
         </div>
     </div>
-
+    <!-- Rating Form -->
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3>Rate this Movie:</h3>
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <form method="post">
+                    {% csrf_token %}
+                    {{ rating_form|crispy }}
+                    <button type="submit" name="rating_form" class="btn btn-primary">Submit Rating</button>
+                </form>
+                {% else %}
+                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate this movie.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -104,13 +120,7 @@
         </div>
     </div>
 </div>
-<script>
-    var deleteModal = document.getElementById('deleteModal');
-    deleteModal.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget;
-        var commentId = button.getAttribute('data-comment-id');
-        var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
-        confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
-    });
-</script>
+
+<script src="{% static 'js/comments.js' %}"></script>
+
 {% endblock %}

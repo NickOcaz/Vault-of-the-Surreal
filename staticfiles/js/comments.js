@@ -33,4 +33,4 @@ deleteModal.addEventListener('show.bs.modal', function (event) {
     var commentId = button.getAttribute('data-comment-id');
     var confirmDeleteButton = deleteModal.querySelector('#confirmDeleteButton');
     confirmDeleteButton.href = "{% url 'comment_delete' slug=movie.slug comment_id=0 %}".replace('0', commentId);
-    });
+});
