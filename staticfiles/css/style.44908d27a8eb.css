@@ -4,34 +4,15 @@
 }    
 
 .hero {
-    background-image: url(/static/images/banner.webp);
-    background-size: 150%; /* Zoom out the image */
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
+/workspace/Vault-of-the-Surreal/movies/migrations    background-size: contain;
+    background-size: cover;
     background-position: center;
     overflow: hidden;
     background-repeat: no-repeat;
     height: 350px;
     margin-bottom: 1rem;
-    transition: background-size 0.5s ease-in-out;
 }
-
-.hero:hover {
-    background-size: 100%; /* Zoom in the image on hover */
-}
-@keyframes zoom {
-    0% {
-        background-size: 120%;
-    }
-    100% {
-        background-size: 100%;
-    }
-}
-
-.hero {
-    animation: zoom 15s infinite alternate;
-}
-
-
-
 
 h1 {
     color: rgb(21, 255, 0);
@@ -92,9 +73,6 @@ main {
     background-color: rgb(126, 10, 10);
 }
 
-
-
-
 .navbar {
     color: #ffffff;
     background: linear-gradient(135deg, rgb(139, 0, 0), rgb(58, 0, 0), rgb(139, 0, 0));
@@ -103,10 +81,15 @@ main {
     padding: 20px;
     margin-bottom: 1rem;
 }
-/* navigait text */
+
 .nav {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
+}
+
+.nav-item:hover {
+    color: rgb(255, 0, 0);
+    background-color: rgb(20, 19, 19);
 }
 
 .nav-item {

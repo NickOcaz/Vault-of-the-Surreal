@@ -4,35 +4,30 @@
 }    
 
 .hero {
-    background-image: url(/static/images/banner.webp);
-    background-size: 150%; /* Zoom out the image */
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
+/workspace/Vault-of-the-Surreal/movies/migrations    background-size: contain;
+    background-size: cover;
     background-position: center;
     overflow: hidden;
     background-repeat: no-repeat;
     height: 350px;
     margin-bottom: 1rem;
-    transition: background-size 0.5s ease-in-out;
 }
 
-.hero:hover {
-    background-size: 100%; /* Zoom in the image on hover */
+.hero img {
+    animation: swell-shrink 3s infinite;
 }
-@keyframes zoom {
+@keyframes swell-shrink {
     0% {
-        background-size: 120%;
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
     100% {
-        background-size: 100%;
+        transform: scale(1);
     }
 }
-
-.hero {
-    animation: zoom 15s infinite alternate;
-}
-
-
-
-
 h1 {
     color: rgb(21, 255, 0);
 }

@@ -4,11 +4,13 @@
 }    
 
 .hero {
-    background-image: url(/static/images/banner.webp);
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
     background-size: 150%; /* Zoom out the image */
     background-position: center;
     overflow: hidden;
+    background-attachment: scroll;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 350px;
     margin-bottom: 1rem;
     transition: background-size 0.5s ease-in-out;
@@ -27,7 +29,7 @@
 }
 
 .hero {
-    animation: zoom 15s infinite alternate;
+    animation: zoom 10s infinite alternate;
 }
 
 

@@ -5,14 +5,33 @@
 
 .hero {
     background-image: url(/static/images/banner.webp);
-    background-size: contain;
-    background-size: cover;
+    background-size: 150%; /* Zoom out the image */
     background-position: center;
     overflow: hidden;
     background-repeat: no-repeat;
     height: 350px;
     margin-bottom: 1rem;
+    transition: background-size 0.5s ease-in-out;
 }
+
+.hero:hover {
+    background-size: 100%; /* Zoom in the image on hover */
+}
+@keyframes zoom {
+    0% {
+        background-size: 120%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+.hero {
+    animation: zoom 15s infinite alternate;
+}
+
+
+
 
 h1 {
     color: rgb(21, 255, 0);
@@ -73,13 +92,21 @@ main {
     background-color: rgb(126, 10, 10);
 }
 
+
+
+
 .navbar {
     color: #ffffff;
-    background: linear-gradient(135deg, rgb(139, 0, 0), rgb(78, 0, 0), rgb(139, 0, 0));
+    background: linear-gradient(135deg, rgb(139, 0, 0), rgb(58, 0, 0), rgb(139, 0, 0));
     font-size: large;
     color: rgb(255, 255, 255);
     padding: 20px;
     margin-bottom: 1rem;
+}
+/* navigait text */
+.nav {
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 0, 0);
 }
 
 .nav-item {
@@ -118,3 +145,4 @@ main {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
 }
+
