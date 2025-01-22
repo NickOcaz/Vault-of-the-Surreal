@@ -231,6 +231,16 @@ Promptingh copilot to generate a Entity-Relationship Diagram sugeested which app
 | ReviewDate | TIMESTAMP   | Default CURRENT_TIMESTAMP |
 | Approved   | DateTime    | Auto Now Add     |
 
+
+### Ratings Table
+
+| Attribute | Data Type   | Description      |
+|-----------|-------------|------------------|
+| RatingID  | INT         | Primary Key      |
+| MovieID   | INT         | Foreign Key      |
+| UserID    | INT         | Foreign Key      |
+| Score     | INT         | Rating score     |
+
 ### User Flow Diagram
 
 Movie:
@@ -248,23 +258,25 @@ Contains fields like id (primary key), movie_id (foreign key to MovieID), author
 as a diagram
 Here's a visual representation of the database design and relationships for the Movie, Comment, and User models:
 
+### ERD
+
 ```plaintext
 +----------------+              +---------------+              +----------------+
 |     Movie      |              |     User      |              |    Comment     |
 +----------------+              +---------------+              +----------------+
-| MovieID (PK)   |              | id (PK)       |     1      * | id (PK)        |
-| Title          |              | username      | <---------  | movie_id (FK)  |
+| MovieID (PK)   |              | id (PK)       |              | id (PK)        |
+| Title          |              | username      | <---------   | movie_id (FK)  |
 | slug           |              | email         |              | author_id (FK) |
 | Year           |              | password      |              | body           |
 | Director       |              +---------------+              | approved       |
 | Description    |                                             | created_on     |
-| ImageURL       |                                        *--->| movie_id       |
-| status         |                                        *    | author_id      |
-+----------------+                                        *    +----------------+
-      1                                               *       | 
-      |                                               *       |
-      |                                               *       |
-      v                                               *       v
+| ImageURL       |                                         --->| movie_id       |
+| status         |                                         |   | author_id      |
++----------------+                                         |   +----------------+
+   1                                                       | 
+   |                                                       |
+   |                                                       |
+   v                                                       v
 +----------------+                                    +---------------+
 | Comment        |                                    | User          |
 +----------------+                                    +---------------+
@@ -275,9 +287,39 @@ Here's a visual representation of the database design and relationships for the 
 | approved       |                                    +---------------+
 | created_on     |
 +----------------+
+   1
+   |
+   |
+   v
++----------------+
+|    Rating      |
++----------------+
+| RatingID (PK)  |
+| movie_id (FK)  |
+| user_id (FK)   |
+| score          |
++----------------+
 ```
 
 Explanation:
+
+Rating:
+
+* Contains fields (primary key), movie_id (foreign key to MovieID), user_id (foreign key to User), and score.
+
+### Relationships
+
+One-to-Many Relationship:
+
+* One Movie can have multiple Ratings.
+* One User can give multiple Ratings.
+
+Many-to-One Relationship:
+
+* Each Rating is associated with one Movie.
+* Each Rating is associated with one User.
+
+
 Movie:
 
 * Contains fields like MovieID (primary key), Title, slug, Year, Director, Description, ImageURL, and status.
@@ -310,7 +352,7 @@ Many-to-One Relationship:
 
 * Secure user registration and login functionality.
 
-* Password recovery options.
+* CRUD funtionality for posts
 
 ### Movie Database Management
 
