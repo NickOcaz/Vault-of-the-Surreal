@@ -4,7 +4,7 @@
 }    
 
 .hero {
-    background-image: url(/static/images/banner.webp);
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
     background-size: contain;
     background-size: cover;
     background-position: center;
@@ -102,13 +102,23 @@ main {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.192) !important;
+    background-color: rgb(0, 0, 0) !important;
     color: rgb(255, 255, 255) !important;
     border: 0 !important;
     border-radius: 10px !important;
 }
 
-/** Comments total */
+.card-body {
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+
+
+
+.card-img-top {
+    width: 50%;
+}
+
 .container {
     color: rgb(255, 255, 255);
     font-size: 2rem;

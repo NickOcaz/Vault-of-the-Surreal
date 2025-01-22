@@ -4,7 +4,7 @@
 }    
 
 .hero {
-    background-image: url(/static/images/banner.webp);
+    background-image: url("/static/images/banner.e7f7f830b5d9.webp");
     background-size: contain;
     background-size: cover;
     background-position: center;
@@ -18,16 +18,9 @@ h1 {
     color: rgb(21, 255, 0);
 }
 
-h2,
-h3,
-h5 {
-    color: #FF0000;
-    background-color: #1A1A1A;
-}
-
-h3 {
-    color: #FF0000;
-    background-color: #1A1A1A;
+h2 {
+    color:#FF0000;
+    background-color:#1A1A1A ;
 }
 
 .link {
@@ -39,8 +32,7 @@ h3 {
     cursor: pointer;
 }
 
-.btn.btn-edit, 
-.btn.btn-delete {
+button {
     background-color: rgb(139, 0, 0);
     color: rgb(255, 255, 255);
     border: none;
@@ -101,20 +93,18 @@ main {
     border: 0px solid rgba(0, 0, 0, 0);
 }
 
-.card {
-    background-color: rgba(0, 0, 0, 0.192) !important;
-    color: rgb(255, 255, 255) !important;
-    border: 0 !important;
-    border-radius: 10px !important;
+.card-body {
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
 }
 
-/** Comments total */
+.card-img-top {
+    width: 50%;
+}
+
 .container {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
-}
-
-.modal-body {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
 }

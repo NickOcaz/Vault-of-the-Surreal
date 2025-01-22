@@ -18,6 +18,18 @@ h1 {
     color: rgb(21, 255, 0);
 }
 
+h2,
+h3,
+h5 {
+    color: #FF0000;
+    background-color: #1A1A1A;
+}
+
+h3 {
+    color: #FF0000;
+    background-color: #1A1A1A;
+}
+
 .link {
     background-color: rgb(139, 0, 0);
     color: rgb(255, 255, 255);
@@ -27,7 +39,8 @@ h1 {
     cursor: pointer;
 }
 
-button {
+.btn.btn-edit, 
+.btn.btn-delete {
     background-color: rgb(139, 0, 0);
     color: rgb(255, 255, 255);
     border: none;
@@ -39,10 +52,6 @@ button {
 .nav-link {
     color: rgb(255, 255, 255);
     text-decoration: none;
-}
-
-h2 {
-    color: rgb(129, 0, 0);
 }
 
 p {
@@ -92,18 +101,20 @@ main {
     border: 0px solid rgba(0, 0, 0, 0);
 }
 
-.card-body {
-    background-color: rgb(0, 0, 0);
-    padding: 1rem;
+.card {
+    background-color: rgba(0, 0, 0, 0.192) !important;
+    color: rgb(255, 255, 255) !important;
+    border: 0 !important;
+    border-radius: 10px !important;
 }
 
-.card-img-top {
-    width: 50%;
-}
-
+/** Comments total */
 .container {
     color: rgb(255, 255, 255);
-    font-size: 1.2rem;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.modal-body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
