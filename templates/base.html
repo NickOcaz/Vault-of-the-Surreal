@@ -48,7 +48,7 @@
                 </ul>
                 <span class="navbar-text text-muted">
                     {% if user.is_authenticated %}
-                    <p class="text-end m-3">Logged in: {{ user }}</p>
+                    <span class="text-end m-3">Logged in: {{ user }}</span>
                     {% else %}
                     <p class="text-end m-3"></p>
                     {% endif %}
@@ -56,16 +56,16 @@
 
 <!-- accounts -->
 {% if user.is_authenticated %}
-<li class="nav-item list-unstyled"></li>
+<li class="nav-item list-unstyled">
     <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
         href="{% url 'account_logout' %}">Logout</a>
 </li>
 {% else %}
-<li class="nav-item list-unstyled"></li>
+<li class="nav-item list-unstyled">
     <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
         href="{% url 'account_signup' %}">Register</a>
 </li>
-<li class="nav-item list-unstyled"></li>
+<li class="nav-item list-unstyled">
     <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
         href="{% url 'account_login' %}">Login</a>
 </li>
