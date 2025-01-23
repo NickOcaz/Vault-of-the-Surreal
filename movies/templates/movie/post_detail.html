@@ -10,14 +10,13 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ movie.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ movie.year }} | {{ movie.director
-                    }}</p>
+                <p class="post-subtitle">{{ movie.year }} | {{ movie.director }}</p>
                 <p>Average Rating: {{ average_rating }}</p>
                 <p class="card-text">
                     {{ movie.description | safe }}
                 </p>
             </div>
-            <div class="col-12 col-md-3 masthead-image">
+            <div class="col-12 col-md-3 masthead-image" style="z-index: 1; position: relative;">
                 {% if "placeholder" in movie.featured_image.url %}
                 <img class="card-img-top"
                     src="{% static 'images/default.png' %}"
@@ -26,6 +25,27 @@
                 <img class="card-img-top" src="{{ movie.featured_image.url }}"
                     alt="{{ movie.title }}">
                 {% endif %}
+
+                <!-- Rating Form -->
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3>Rate this Movie:</h3>
+            <div class="card-body d-flex justify-content-center align-items-center"></div>
+                {% if user.is_authenticated %}
+                <form method="post" class="d-flex align-items-center">
+                    {% csrf_token %}
+                    {{ rating_form|crispy }}
+                    <button type="submit" name="rating_form"
+                        class="btn btn-primary ms-2" data-bs-toggle="modal"
+                        data-bs-target="#thankYouModal">Submit Rating</button>
+                </form>
+                {% else %}
+                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate
+                    this movie.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
             </div>
         </div>
     </div>
@@ -93,26 +113,7 @@
             </div>
         </div>
     </div>
-    <!-- Rating Form -->
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3">
-            <h3>Rate this Movie:</h3>
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <form method="post">
-                    {% csrf_token %}
-                    {{ rating_form|crispy }}
-                    <button type="submit" name="rating_form"
-                        class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#thankYouModal">Submit Rating</button>
-                </form>
-                {% else %}
-                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate
-                    this movie.</p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 <!-- Delete Confirmation Modal -->

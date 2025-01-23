@@ -202,3 +202,17 @@ main {
 p.approval {
     color: #c50202;
 }
+
+#id_score{
+    width:100px;
+}
+
+form label {
+    display: none;
+}
+
+.btn {
+    margin-bottom: 16px;
+    color: #181818;
+    background-color: #ffd000;
+}

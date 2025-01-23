@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let button of editButtons) {
         button.addEventListener("click", (e) => {
             let commentId = e.target.getAttribute("data-comment_id");
-            let commentContent = document.getElementById(`comment${commentId}`).innerText
-            commentText.value = commentContent;
-            submitButton.innerText = "Update";
-            commentForm.setAttribute("action", `edit_comment/${commentId}/`);
+            let commentElement = document.getElementById(`comment${commentId}`);
+            if (commentElement) {
+                let commentContent = commentElement.innerText;
+                commentText.value = commentContent;
+                submitButton.innerText = "Update";
+                commentForm.setAttribute("action", `edit_comment/${commentId}/`);
+            } else {
+                console.error(`Comment element with ID comment${commentId} not found.`);
+            }
         });
     }
 
