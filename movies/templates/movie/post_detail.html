@@ -10,7 +10,8 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ movie.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ movie.year }} | {{ movie.director }}</p>
+                <p class="post-subtitle">{{ movie.year }} | {{ movie.director
+                    }}</p>
                 <p>Average Rating: {{ average_rating }}</p>
                 <p class="card-text">
                     {{ movie.description | safe }}
@@ -18,9 +19,12 @@
             </div>
             <div class="col-12 col-md-3 masthead-image">
                 {% if "placeholder" in movie.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
+                <img class="card-img-top"
+                    src="{% static 'images/default.png' %}"
+                    alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
+                <img class="card-img-top" src="{{ movie.featured_image.url }}"
+                    alt="{{ movie.title }}">
                 {% endif %}
             </div>
         </div>
@@ -45,7 +49,9 @@
             </div>
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
+                <div
+                    class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}"
+                    id="comment{{ comment.id }}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
@@ -61,8 +67,13 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <a href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}" class="btn btn-edit" comment_id="{{ comment.id }}">Edit</a>
-                    <a href="#" class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-comment-id="{{ comment.id }}">Delete</a>
+                    <a
+                        href="{% url 'comment_edit' slug=movie.slug comment_id=comment.id %}"
+                        class="btn btn-edit"
+                        comment_id="{{ comment.id }}">Edit</a>
+                    <a href="#" class="btn btn-delete" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                        data-comment-id="{{ comment.id }}">Delete</a>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -75,10 +86,12 @@
                 <form method="post" id="commentForm">
                     {% csrf_token %}
                     {{ comment_form|crispy }}
-                    <button type="submit" id="submitButton" name="comment_form" class="btn btn-primary">Submit Comment</button>
+                    <button type="submit" id="submitButton" name="comment_form"
+                        class="btn btn-primary">Submit Comment</button>
                 </form>
                 {% else %}
-                <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+                <p>Please <a href="{% url 'account_login' %}">log in</a> to
+                    leave a comment.</p>
                 {% endif %}
             </div>
         </div>
@@ -92,10 +105,13 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ rating_form|crispy }}
-                    <button type="submit" name="rating_form" class="btn btn-primary">Submit Rating</button>
+                    <button type="submit" name="rating_form"
+                        class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#thankYouModal">Submit Rating</button>
                 </form>
                 {% else %}
-                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate this movie.</p>
+                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate
+                    this movie.</p>
                 {% endif %}
             </div>
         </div>
@@ -103,19 +119,41 @@
 </div>
 
 <!-- Delete Confirmation Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Send to the grave?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="deleteModalLabel">Send to the
+                    grave?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Are you sure?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
+                <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cancel</button>
+                <a href="#" id="confirmDeleteButton"
+                    class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Thank You Modal -->
+<div class="modal fade" id="thankYouModal" tabindex="-1"
+    aria-labelledby="thankYouModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="thankYouModalLabel">Thank You!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Thank you for submitting your rating.
             </div>
         </div>
     </div>

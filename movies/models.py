@@ -20,7 +20,7 @@ class Movie(models.Model):
     def average_rating(self):
         ratings = self.ratings.all()
         if ratings:
-            return sum(rating.score for rating in ratings) / len(ratings)
+            return round(sum(rating.score for rating in ratings) / len(ratings), 1)
         return 0
 
 class Comment(models.Model):

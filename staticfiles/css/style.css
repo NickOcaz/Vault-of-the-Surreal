@@ -117,24 +117,26 @@ main {
     background: linear-gradient(135deg, rgb(139, 0, 0), rgb(58, 0, 0), rgb(139, 0, 0));
     font-size: large;
     color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 5px;
     margin-bottom: 1rem;
 }
 /* navigait text */
 .nav {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
+    text-align: center;
+    vertical-align: middle;
 }
 
 
 .nav-item {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .text-end {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .brand {
@@ -172,4 +174,31 @@ main {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.text-warning {
+    color: rgb(226, 0, 0);
+}
+
+#modal, #modal-header, .modal-content {
+    background-color: rgb(0, 0, 0);
+    background-image: url(/static/images/banner.webp);
+    animation: fadeImage 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+}
+
+.btn-signup {
+    background-color: rgb(139, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+p.approval {
+    color: #c50202;
 }
