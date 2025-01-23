@@ -13,12 +13,12 @@
 
 .hero {
     background-image: url(/static/images/banner.webp);
-    background-size: 150%; /* Zoom out the image */
-    background-position: center;
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: top; /* Align the image to the top */
     overflow: hidden;
     background-repeat: no-repeat;
     height: 350px;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Remove bottom margin */
     transition: background-size 0.5s ease-in-out;
 }
 
@@ -79,7 +79,6 @@ h3 {
     cursor: pointer;
 }
 
-
 .btn.btn-edit, 
 .btn.btn-delete {
     background-color: rgb(139, 0, 0);
@@ -129,6 +128,7 @@ main {
     padding: 5px;
     margin-bottom: 1rem;
 }
+
 /* navigait text */
 .nav {
     color: rgb(255, 255, 255);
@@ -247,4 +247,10 @@ form label {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100px; /* Adjust hero height for mobile view */
+    }
 }
