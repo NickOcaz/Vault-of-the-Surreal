@@ -94,10 +94,6 @@ a {
     text-decoration: none;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
 .nav {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
@@ -208,10 +204,7 @@ ul {
 
 #modal, #modal-header, .modal-content {
     background-color: rgb(0, 0, 0);
-    background-image: url(/static/images/banner.webp);
-    animation: fadeImage 1s ease-in-out;
-    background-size: cover;
-    background-position: center;
+    animation: fadeImage 5s ease-in-out;
     color: rgb(255, 255, 255);
 }
 
