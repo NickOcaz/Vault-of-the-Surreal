@@ -21,17 +21,6 @@
             
     }
 
-.hero {
-    background-image: url(/static/images/banner.webp);
-    background-size: cover; /* Ensure the image covers the entire container */
-    background-position: top; /* Align the image to the top */
-    overflow: hidden;
-    background-repeat: no-repeat;
-    height: 350px;
-    margin-bottom: 1rem; /* Remove bottom margin */
-    transition: background-size 0.5s ease-in-out;
-}
-
 /* animate the hero image */
 .hero {
     background-size: 100%; 
@@ -106,7 +95,7 @@ a {
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .nav {
