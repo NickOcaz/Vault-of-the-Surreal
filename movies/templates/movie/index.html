@@ -3,7 +3,9 @@
 {% block content %}
 <div class="row align-items-center">
     <div class="col-md-3">
-        <img src="{% static 'images/VAULT-1.webp' %}" alt="Vault of the Surreal branding" class="img-fluid">
+        <div class="text-center">
+            <img src="{% static 'images/VAULT-1.webp' %}" alt="Vault of the Surreal branding" class="img-fluid">
+        </div>
     </div>
     <div class="col-md-9">
         <h1>Welcome to HELL</H1>
@@ -36,7 +38,7 @@
                                     <h3 class="card-title">{{ movie.title }}</h3>
                                 </a>
                                 <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
-                                <p>Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
+                                <p class= "average_score">Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
                                 <p>{{ movie.comments.count }} Comments</p>
                                 {% if not movie.is_approved and movie.author == user %}
                                 <p class="text-warning">This post is a draft and awaiting approval.</p>

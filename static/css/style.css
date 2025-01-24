@@ -48,20 +48,24 @@ h1 {
     color: rgb(92, 0, 0);
     font-family: 'MyCustomFont';
     font-size: 3rem;
+    margin: auto 0;
 }
 
 h2{
     font-family: 'MyCustomFont';
     color: #00a82a;
-    background: linear-gradient(135deg, rgb(43, 43, 43), rgb(0, 0, 0), rgb(41, 41, 41));
-    border-radius: 0 0 3rem 3rem;
+    /* background: linear-gradient(135deg, rgb(24, 0, 0), rgb(0, 0, 0), rgb(20, 0, 0)); */
+    margin: auto 0;
+    /*border-radius: 0.5rem 0.5rem;*/
+    /* padding: 1rem 1rem;*/
 }
 
 h3 {
     font-family: 'MyCustomFont';
     color: #06c200;
     background-color: #1A1A1A;
-    padding-left: 2rem;
+    margin: auto 0;
+    padding: 1rem;
 }
 
 /* navigation hands */
@@ -108,10 +112,12 @@ a {
 p {
     font-size: 1.2rem;
     color: rgb(139, 137, 0);
+    margin: 1rem 2rem;
+    text-align: center;
 }
 
 .page-wrapper {
-    text-align: center;
+    margin: auto 0;
 }
 
 main {
@@ -133,7 +139,7 @@ main {
 .nav {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
-    text-align: center;
+    margin: auto 0;
     vertical-align: middle;
 }
 
@@ -154,12 +160,16 @@ main {
     font-size: 32px;
 }
 
+#home-branding {
+    margin: auto 0;
+}
+
 .image-container {
     border: 0px solid rgba(0, 0, 0, 0);
 }
 
-.container {
-    padding:1rem;
+.container img {
+    padding:2rem;
 }
 
 .card {
@@ -222,21 +232,32 @@ p.approval {
 }
 
 form label {
-    display: none;
+    /* display: none; */
+    font-size: 0px; /* hide the label*/
 }
 
 .btn {
     margin-bottom: 16px;
     color: #111111;
     background-color: #ffd000;
-    text-align: right;
+    margin: auto 0;
     border: 0;
 }
 
 .btn:hover {
     color: #0f0f0f;
     background-color: #ff0000;
+    font-weight:bold;
 }
+
+.average_score {
+    color: #141414;
+    background: linear-gradient( rgb(109, 89, 1), rgb(189, 192, 0), rgb(109, 89, 1));
+    border-radius: 10px;
+    padding: 5px;
+    margin:1rem;
+}
+
 
 #review-wrapper {
     background-color: #181818;
