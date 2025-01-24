@@ -12,47 +12,42 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ movie.director }} |{{ movie.year }}</p>
                 <p>Average Rating: <span class="average_score">{{ average_rating }}</span></p>
-                <!-- Movie description -->    
+                <!-- Movie description -->
                 <p class="card-text p-1"></p>
-                    {{ movie.description | safe }}
+                {{ movie.description | safe }}
                 </p>
-            
             </div>
             <div class="col-12 col-md-3 masthead-image" style="z-index: 1; position: relative;">
                 {% if "placeholder" in movie.featured_image.url %}
-                <img class="card-img-top"
-                    src="{% static 'images/default.png' %}"
-                    alt="placeholder image">
+                <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src="{{ movie.featured_image.url }}"
-                    alt="{{ movie.title }}">
+                <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                 {% endif %}
 
                 <!-- Rating Form -->
-    <div class="row justify-content-center">
-        <div class="col-md-8 card mb-4 mt-3">
-            <h2 class="text-center">Rate this Movie:</h2>
-            <div class="card-body d-flex justify-content-center align-items-center">
-                {% if user.is_authenticated %}
-                <form method="post" class="d-flex align-items-center">
-                    {% csrf_token %}
-                    {{ rating_form|crispy }}
-                    <button type="submit" name="rating_form"
-                        class="btn ms-2" data-bs-toggle="modal"
-                        data-bs-target="#thankYouModal">Submit</button>
-                </form>
-                {% else %}
-                <p>Please <a href="{% url 'account_login' %}">log in</a> to rate
-                    this movie.</p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 card mb-4 mt-3">
+                        <h2 class="text-center">Rate this Movie:</h2>
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            {% if user.is_authenticated %}
+                            <form method="post" class="d-flex align-items-center">
+                                {% csrf_token %}
+                                {{ rating_form|crispy }}
+                                <button type="submit" name="rating_form" class="btn ms-2" data-bs-toggle="modal"
+                                    data-bs-target="#thankYouModal">Submit</button>
+                            </form>
+                            {% else %}
+                            <p>Please <a href="{% url 'account_login' %}">log in</a> to rate
+                                this movie.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="container">
     <!-- Displaying Comments and Comment Form side by side -->
@@ -72,8 +67,7 @@
             </div>
             <div class="card-body">
                 {% for comment in comments %}
-                <div
-                    class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}"
+                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}"
                     id="">
                     <p class="font-weight-bold">
                         {{ comment.author }}
@@ -91,8 +85,7 @@
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
-                    <a href="#" class="btn btn-delete" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
+                    <a href="#" class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                         data-comment-id="{{ comment.id }}">Delete</a>
                     {% endif %}
                 </div>
@@ -107,8 +100,8 @@
                 <form method="post" id="commentForm">
                     {% csrf_token %}
                     {{ comment_form|crispy }}
-                    <button type="submit" id="submitButton" name="comment_form"
-                        class="btn mx-auto d-block">Submit Comment</button>
+                    <button type="submit" id="submitButton" name="comment_form" class="btn mx-auto d-block">Submit
+                        Comment</button>
                 </form>
                 {% else %}
                 <p>Please <a href="{% url 'account_login' %}">log in</a> to
@@ -117,42 +110,36 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 <!-- Delete Confirmation Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-    aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteModalLabel">Send to the
                     grave?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Are you sure?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-bs-dismiss="modal">Cancel</button>
-                <a href="#" id="confirmDeleteButton"
-                    class="btn btn-danger">Delete</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Thank You Modal -->
-<div class="modal fade" id="thankYouModal" tabindex="-1"
-    aria-labelledby="thankYouModalLabel" aria-hidden="true">
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="thankYouModalLabel">Thank You!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Thank you for submitting your rating.
