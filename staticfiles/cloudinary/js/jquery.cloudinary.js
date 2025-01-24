@@ -3494,7 +3494,7 @@ var slice = [].slice,
 
     function ClientHintsMetaTag(options) {
       ClientHintsMetaTag.__super__.constructor.call(this, 'meta', void 0, Util.assign({
-        "http-equiv": "Accept-CH",
+        "https-equiv": "Accept-CH",
         content: "DPR, Viewport-Width, Width"
       }, options));
     }
@@ -4141,7 +4141,7 @@ var slice = [].slice,
       if (((ref = options.cloud_name) != null ? ref.indexOf("/") : void 0) === 0) {
         return '/res' + options.cloud_name;
       }
-      protocol = "http://";
+      protocol = "https://";
       cdnPart = "";
       subdomain = "res";
       host = ".cloudinary.com";
