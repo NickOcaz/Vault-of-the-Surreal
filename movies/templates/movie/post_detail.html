@@ -38,7 +38,7 @@
                     {% csrf_token %}
                     {{ rating_form|crispy }}
                     <button type="submit" name="rating_form"
-                        class="btn btn-primary ms-2" data-bs-toggle="modal"
+                        class="btn ms-2" data-bs-toggle="modal"
                         data-bs-target="#thankYouModal">Submit</button>
                 </form>
                 {% else %}
@@ -108,7 +108,7 @@
                     {% csrf_token %}
                     {{ comment_form|crispy }}
                     <button type="submit" id="submitButton" name="comment_form"
-                        class="btn btn-primary">Submit Comment</button>
+                        class="btn mx-auto d-block">Submit Comment</button>
                 </form>
                 {% else %}
                 <p>Please <a href="{% url 'account_login' %}">log in</a> to
