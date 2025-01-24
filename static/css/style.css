@@ -48,14 +48,14 @@ h1 {
     color: rgb(92, 0, 0);
     font-family: 'MyCustomFont';
     font-size: 3rem;
-    margin: auto 0;
+    margin: 0 auto;
 }
 
 h2{
     font-family: 'MyCustomFont';
     color: #00a82a;
     /* background: linear-gradient(135deg, rgb(24, 0, 0), rgb(0, 0, 0), rgb(20, 0, 0)); */
-    margin: auto 0;
+    margin: 0 auto;
     /*border-radius: 0.5rem 0.5rem;*/
     /* padding: 1rem 1rem;*/
 }
@@ -64,7 +64,7 @@ h3 {
     font-family: 'MyCustomFont';
     color: #06c200;
     background-color: #1A1A1A;
-    margin: auto 0;
+    margin: 0 auto;
     padding: 1rem;
 }
 
@@ -113,11 +113,10 @@ p {
     font-size: 1.2rem;
     color: rgb(139, 137, 0);
     margin: 1rem 2rem;
-    text-align: center;
 }
 
 .page-wrapper {
-    margin: auto 0;
+    margin: 0 auto;
 }
 
 main {
@@ -139,7 +138,7 @@ main {
 .nav {
     color: rgb(255, 255, 255);
     background-color: rgb(78, 0, 0);
-    margin: auto 0;
+    margin: 0 auto;
     vertical-align: middle;
 }
 
@@ -158,10 +157,6 @@ main {
     font-family: 'MyCustomFont';
     color: rgb(255, 255, 255);
     font-size: 32px;
-}
-
-#home-branding {
-    margin: auto 0;
 }
 
 .image-container {
@@ -220,7 +215,7 @@ main {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
 }
 
 p.approval {
@@ -240,7 +235,7 @@ form label {
     margin-bottom: 16px;
     color: #111111;
     background-color: #ffd000;
-    margin: auto 0;
+    margin: 0 auto;
     border: 0;
 }
 
