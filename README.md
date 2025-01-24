@@ -1,38 +1,11 @@
 
 # Vault of the Surreal
 
-![Vault of the Surreal](readme-images/banner.png)
+![Vault of the Surreal](static/images/banner.webp)
 
-The purpose of the 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, and rate their favorite 80s horror movies, while also discovering new films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
+The purpose of this 80s horror movie website, "Vault of the Surreal," is to create a comprehensive and engaging platform for enthusiasts of 1980s horror films. The website will serve as a community hub where users can log in, review, discus and rate their favorite 80s horror movies, while also discovering unseen films from the era. The site will feature a robust database managed by administrators, including detailed movie descriptions, images, and user-generated content.
 
 ## Table of Contents
-
-1. [Target Audience](#target-audience)
-2. [UX](#ux)
-   * [Features](#features)
-   * [Hero Image](#hero-image)
-   * [Colors](#colors)
-3. [Planning with A.I.](#planning-with-ai)
-4. [AI-Prompted Image Generation](#ai-prompted-image-generation)
-5. [Tools and Technologies used](#tools-and-technologies-used)
-6. [Problem Statement](#problem-statement)
-7. [MVP Features](#mvp-features)
-8. [Agile Development Process](#agile-development-process)
-   * [User Stories](#user-stories)
-9. [User Registration and Login](#user-registration-and-login)
-10. [Rate and Review Movies](#rate-and-review-movies)
-11. [Admin Manage Movies](#admin-manage-movies)
-12. [Database Design](#database-design)
-13. [User Flow Diagram](#user-flow-diagram)
-14. [Prioritized Features for MVP](#prioritized-features-for-mvp)
-15. [Wireframes](#wireframes)
-16. [Testing](#testing)
-17. [Code Validation](#code-validation)
-18. [Creating the Repository](#creating-the-repository)
-19. [Deployment for Project](#deployment-for-project)
-20. [Future Enhancements (Post-MVP)](#future-enhancements-post-mvp)
-21. [Future Features](#future-features)
-22. [Credits](#credits)
 
 ## Target Audience
 
@@ -53,18 +26,34 @@ Retro Pop Culture Fans: Individuals with a broader interest in 80s pop culture, 
 
 ### Features
 
-### Hero Image
-
-![Hero Image](readme-images/banner.webp)
-
 ### Branding
 
-![Branding](readme-images/hero800px.png)
+![Branding](static/images/VAULT-1.webp)
 
 ### Colors
 
-To ensure visual consistency, the color palette for the website is derived from the hero image.
+To ensure visual consistency and maintaing a classic horror theme, the color palette for the website are derived colours expected in horror movies: 
+
+
+
 ![Color Palette](readme-images/colours.png)
+
+* Red - Blood
+* Yellow - Toxic 
+* Green - Slime
+* Black Shade - Night Time
+
+### Navigation
+
+Inspired by the 80's comedy horror 'House' (c) 1984 New World Pictures
+
+![Fingers](readme-images/fingers.png)
+
+## Wireframes
+
+![Wireframe](readme-images/wireframe.png)
+
+
 
 ## Planning with A.I
 
@@ -73,11 +62,6 @@ Brainstorming with GitHub Copilot was instrumental in developing the foundations
 ## AI-Prompted Image Generation
 
 Using AI prompting for image generation, I aimed to create a hero image that captured the essence of 80s-style horror comic books. After experimenting with several AI-generated suggestions, we found the perfect image that embodied the retro horror aesthetic we desired. However, to make the image more usable for the website, I needed to manipulate it further in Gimp image software. This involved adjusting colors, enhancing details, and ensuring it seamlessly integrated with our site's design, ultimately resulting in a visually striking hero image that sets the tone for "Vault of the Surreal."
-
-## Tools and Technologies used
-
-* Balsamiq - Wireframe design
-* Gimp - Image design and manipulation
 
 ## Problem Statement
 
@@ -94,12 +78,11 @@ How can "Vault of the Surreal" provide a secure, user-friendly, and engaging pla
 
 * Admin interface for adding, editing, and deleting movies.
 * Basic movie details: title, year, director, brief description, and poster image.
-* Categorization and tagging of movies (e.g., genre, sub-genre, year).
 
 ### User Reviews and Ratings
 
-* Ability for users to submit reviews and ratings for movies.
-* Display of average ratings and recent reviews on movie pages.
+* Ability for users to comment/discus and rate movies.
+* Display average ratings and recent comments on movie page.
 
 ### Community Interaction
 
@@ -121,7 +104,9 @@ How can "Vault of the Surreal" provide a secure, user-friendly, and engaging pla
 
 MoSCoW Prioritization
 
-MoSCoW prioritization was used in this project to clearly define and manage the essential features and functionalities required for the "Vault of the Surreal" website. By categorizing tasks into Must-haves, Should-haves, Could-haves, and Won't-haves, the development team can focus on delivering the most critical aspects first, ensuring that the core objectives are met within the project timeline. This method helps in making informed decisions, balancing stakeholder expectations, and efficiently allocating resources to achieve a successful MVP launch.
+MoSCoW prioritization was used in this project to clearly define and manage the essential features and functionalities required for the "Vault of the Surreal" website. By categorizing tasks into Must-haves, Should-haves, Could-haves, and Won't-haves, the development team can focus on delivering the most critical aspects first, ensuring that the core objectives are met within the project timeline. This method helps in making informed decisions and efficiently allocating time to achieve a successful MVP launch.
+
+GitHub project board was utilised for managing the tasks for this project.
 
 ![User Stories](readme-images/userstories.png)
 
@@ -147,35 +132,37 @@ MoSCoW prioritization was used in this project to clearly define and manage the 
 
 ## User Registration and Login
 
-### User
+### User accounts
 
 * User navigates to the registration page.
 
-* User enters email, password, and other required details.
+* User enters name, email optional, password, and other required details.
 
 * User submits the form.
 
-* System sends a verification email.
+* System updates to say logged in (with new account).
 
-* User verifies the email.
+* User  can now log in with their credentials.
 
-* User logs in with verified credentials.
+* Data protection measures to safeguard user information.
 
-# Rate and Review Movies
+* Compliance with privacy policies and terms of service.
 
-text to go here
-
-## User
+## User interaction
 
 * User navigates to a movie's detail page.
 
-* User clicks on the "Write a Review" button.
+* User able to read movie details
 
-* User enters a rating (e.g., 1-5 stars) and writes a review.
+* User able to add to a discussion board and edit later
 
-* User submits the review.
+### Rate and Review Movies
 
-* System displays the review on the movie's page.
+* User able to score a movie 1 - 10
+
+* User notified of submitting a rating
+
+* Use able to change the rating afterwards
 
 ## Admin Manage Movies
 
@@ -190,6 +177,74 @@ text to go here
 * Admin submits the form.
 
 * System updates the movie database.
+
+## Future Enhancements (Post-MVP)
+
+* User Profiles:
+
+* User profile pages showing submitted reviews and ratings.
+
+* Profile customization options (e.g., profile picture, bio).
+
+### Advanced Search and Filtering
+
+* More advanced filtering options (e.g., by actor, release date, user ratings).
+
+### Social Media Integration
+
+* Allow users to share reviews and ratings on social media platforms.
+
+### Analytics and Insights
+
+* Admin dashboard with analytics on user engagement and movie ratings.
+
+### Movie Database Management-1
+
+* User Search and Filter
+
+* Search bar to find movies by title, director, or keywords.
+
+* Filtering options to narrow down movies by genre, year, rating, etc.
+
+### User Profiles
+
+* Basic user profile pages showing submitted reviews and ratings, details and image.
+
+# Prioritized Features for MVP
+
+### User Authentication
+
+* Secure user registration and login functionality.
+
+* CRUD funtionality for posts
+
+### Movie Database Management
+
+* Admin interface for adding, editing, and deleting movies.
+
+* Basic movie details: title, year, director, brief description, and poster image.
+
+### User Reviews and Ratings
+
+* Ability for users to submit reviews and ratings for movies.
+
+* Display of average ratings and recent reviews on movie pages.
+
+### Responsive Design
+
+* Mobile-friendly layout to ensure usability on various devices.
+
+### Privacy and Security
+
+* Data protection measures to safeguard user information.
+
+* Compliance with privacy policies and terms of service.
+
+
+
+
+
+
 
 ## Database Design
 
@@ -322,15 +377,15 @@ Many-to-One Relationship:
 
 Movie:
 
-* Contains fields like MovieID (primary key), Title, slug, Year, Director, Description, ImageURL, and status.
+* Contains fields - MovieID (primary key), Title, slug, Year, Director, Description, ImageURL, and status.
 
 ### User
 
-* Contains fields like id (primary key), username, email, and password.
+* Contains fields - id (primary key), username, email, and password.
 
 ### Comment
 
-* Contains fields like id (primary key), movie_id (foreign key to MovieID), author_id (foreign key to User), body, approved, and created_on.
+* Contains fields - id (primary key), movie_id (foreign key to MovieID), author_id (foreign key to User), body, approved, and created_on.
 
 ### Relationships
 
@@ -346,40 +401,7 @@ Many-to-One Relationship:
 
 * One User can write multiple Comments.
 
-## Prioritized Features for MVP
-
-### User Authentication
-
-* Secure user registration and login functionality.
-
-* CRUD funtionality for posts
-
-### Movie Database Management
-
-* Admin interface for adding, editing, and deleting movies.
-
-* Basic movie details: title, year, director, brief description, and poster image.
-
-### User Reviews and Ratings
-
-* Ability for users to submit reviews and ratings for movies.
-
-* Display of average ratings and recent reviews on movie pages.
-
-### Responsive Design
-
-* Mobile-friendly layout to ensure usability on various devices.
-
-### Privacy and Security
-
-* Data protection measures to safeguard user information.
-
-* Compliance with privacy policies and terms of service.
-
-## Wireframes
-
-![Wireframe](readme-images/wireframe.png)
-
+#
 
 ## Debugging
 
@@ -410,6 +432,11 @@ This error was caused by an undefined variable being accessed in the JavaScript 
 text to go here
 
 ## Code Validation
+
+
+
+### Wave
+![Wave](readme-images/wave.png)
 
 ## Creating the Repository
 
@@ -460,43 +487,10 @@ git commit -m "Initial commit" (details of update)
 
 git push
 
-## Future Enhancements (Post-MVP)
+## Tools and Technologies used
 
-* User Profiles:
-
-* User profile pages showing submitted reviews and ratings.
-
-* Profile customization options (e.g., profile picture, bio).
-
-### Advanced Search and Filtering
-
-* More advanced filtering options (e.g., by actor, release date, user ratings).
-
-### Social Media Integration
-
-* Allow users to share reviews and ratings on social media platforms.
-
-### Analytics and Insights
-
-* Admin dashboard with analytics on user engagement and movie ratings.
-
-### Movie Database Management-1
-
- Categorization and tagging of movies (e.g., genre, sub-genre, year).
-
-* Search and Filter:
-
-* Search bar to find movies by title, director, or keywords.
-
-* Filtering options to narrow down movies by genre, year, rating, etc.
-
-## Future Features
-
-text to go here
-
-## User Profiles
-
-* Basic user profile pages showing submitted reviews and ratings.
+* Balsamiq - Wireframe design
+* Gimp - Image design and manipulation
 
 ## Credits
 
