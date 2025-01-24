@@ -2,7 +2,6 @@
     font-family: 'MyCustomFont';
     src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
     font-display: swap;
-    letter-spacing: 0.2em;
 }
 
 .page-wrapper {
@@ -229,7 +228,7 @@ form label {
 #review-wrapper {
     background-color: #181818;
     color: #ffd000;
-    padding: auto;
+    padding: 1rem;
     border-radius: 8px;
     margin-bottom: auto;
     display: flex;
