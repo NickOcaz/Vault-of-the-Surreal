@@ -31,6 +31,16 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+
+    <!-- Search Engine Optimization (SEO) -->
+    <meta name="description" content="Vault of the Surreal - A place to explore surreal art and creativity.">
+    <meta name="keywords" content="horror movies, classic movies, 80's horror, cult movies, movie discussion, film forum, thriller movies, indie films, movie reviews, film analysis, movie recommendations, cinema history">
+    <meta name="author" content="Vault of the Surreal">
+    <meta property="og:title" content="Vault of the Surreal">
+    <meta property="og:description" content="The place to explore and discuss 80s cult horror movies.">
+    <meta property="og:image" content="static/images/hero_red600px.webp">
+    <meta property="og:url" content="https://vault-of-the-surreal-d6172a25f374.herokuapp.com">
+
 </head>
 <body class="d-flex flex-column h-100 main-bg">
 <div class = "page-wrapper">
@@ -112,17 +122,21 @@ fade show" id="msg" role="alert">
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">(c) noc 1</p>
         <p class="m-0 text-center text-white">Follow us: 
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="text-white">
-            <i class="fab fa-facebook-square ms-3"></i>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="text-white" rel="noopener noreferrer">
+                <i class="fab fa-facebook-square ms-3" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
             </a>
-            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter" class="text-white">
-            <i class="fab fa-twitter-square ms-3"></i>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter" class="text-white" rel="noopener noreferrer">
+                <i class="fab fa-twitter-square ms-3" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
             </a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="text-white">
-            <i class="fab fa-instagram-square ms-3"></i>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="text-white" rel="noopener noreferrer">
+                <i class="fab fa-instagram-square ms-3" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
             </a>
-            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="text-white">
-            <i class="fab fa-youtube-square ms-3"></i>
+            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="text-white" rel="noopener noreferrer">
+                <i class="fab fa-youtube-square ms-3" aria-hidden="true"></i>
+                <span class="sr-only">YouTube</span>
             </a>
         </p>
     </footer>
