@@ -6,13 +6,13 @@
 
 :root {
     --white: #f1f1f1;
-    --green: rgb(0, 184, 0);
-    --yellow: rgb(255, 165, 10);
-    --red: rgb(163, 0, 0);
-    --black: rgb(5, 5, 5);
-    --red-fade: linear-gradient(rgb(5, 5, 5), rgb(29, 0, 0), rgb(5, 5, 5));
-    --light-red-fade: linear-gradient(135deg, rgb(163, 0, 0), rgb(73, 0, 0), rgb(163, 0, 0));
-    --yellow-fade: linear-gradient(135deg, rgb(59, 49, 0), rgb(255, 165, 10), rgb(59, 49, 0));
+    --green: #00b800;
+    --yellow: #ffa50a;
+    --red: #a30000;
+    --black: #050505;
+    --red-fade: linear-gradient(#050505, #1d0000, #050505);
+    --light-red-fade: linear-gradient(135deg, #a30000, #490000, #a30000);
+    --yellow-fade: linear-gradient(135deg, #3b3100, #ffa50a, #3b3100);
 }
 
 .page-wrapper {

@@ -433,12 +433,18 @@ Despite this, the issue persisted. After several prompts, Copilot suggested addi
  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
 ```
 
-## Testing
-
-text to go here
-
 ## Code Validation
+### Result
 
+| Test Type     | Tool/Validator    | Result    | Pass/Fail |
+|---------------|-------------------|-----------|-----------|
+| HTML          | W3C Validator     |           |           |
+| CSS           | W3C CSS Validator | No errors |   Pass    |
+| Accessibility | WAVE Tool         | No errors |   Pass    |
+| Python        | PEP8              |           |           |
+
+### CSS
+![W3C CSS Validation](readme-images/validation/w3c_css.png)
 
 ### Wave
 ![Wave](readme-images/wave.png)
