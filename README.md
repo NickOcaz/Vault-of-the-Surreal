@@ -415,19 +415,23 @@ Stack overflow offered a working suggestion whichj i corrected within the runtim
 
 This error was caused by an undefined variable being accessed in the JavaScript code. To resolve this issue, I reviewed the code to ensure all variables were properly defined before being used.
 
-### A.I. for debugging
+### A.I. for Improving Code Performance
+
+Leveraging GitHub Copilot for improving code performance was a game-changer for this project. By utilizing Copilot's AI-driven suggestions, I was able to identify and implement performance optimizations across various parts of the codebase. This included refactoring inefficient code, optimizing database queries, and enhancing the overall responsiveness of the website. Copilot's ability to provide context-aware recommendations helped streamline the optimization process, ensuring that the website runs smoothly and efficiently, providing a better user experience for 80s horror movie enthusiasts.
+
+
 
 ![Insecure Requests](readme-images/errors/insecure_requests.png)
 
 ### Solution
 
-This error was due to insecure HTTP requests being made instead of HTTPS for Cloudinary access. To fix this, I updated all external resource URLs in the code to use HTTPS, ensuring secure communication and compliance with modern web standards. However, Lighthouse performance still indicated an issue. By using Copilot, I found that implementing a 'Content Security Policy' (CSP) could enforce HTTPS requests. Copilot's initial suggestion was:
+The low core in best practices was due to an insecure HTTP requests being made instead of HTTPS for Cloudinary access. To fix this, I updated all external resource URLs in the code to use HTTPS, ensuring secure communication and compliance with modern web standards. However, Lighthouse performance still indicated an issue. By using Copilot, I found that implementing a 'Content Security Policy' (CSP) could enforce HTTPS requests. Copilot's initial suggestion was:
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests;">
 ```
 
-Despite this, the issue persisted. After several prompts, Copilot suggested adding 'block-all-mixed-content' to the policy, which resolved the issue. 
+Despite this, the issue persisted. After several prompts with knowing we were on the right path, Copilot suggested adding 'block-all-mixed-content' to the policy, which resolved the issue.
 
 ```html
  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
@@ -438,16 +442,25 @@ Despite this, the issue persisted. After several prompts, Copilot suggested addi
 
 | Test Type     | Tool/Validator    | Result    | Pass/Fail |
 |---------------|-------------------|-----------|-----------|
-| HTML          | W3C Validator     |           |           |
+| HTML          | W3C Validator     |           |   Pass    |
 | CSS           | W3C CSS Validator | No errors |   Pass    |
 | Accessibility | WAVE Tool         | No errors |   Pass    |
 | Python        | PEP8              |           |           |
+
+
+### HTML
+![W3C HTML Validation](readme-images/validation/w3c_html.png)
 
 ### CSS
 ![W3C CSS Validation](readme-images/validation/w3c_css.png)
 
 ### Wave
-![Wave](readme-images/wave.png)
+![Wave](readme-images/validation/wave.png)
+
+### Lighthouse
+
+![Lighthouse](readme-images/validation/lighthouse.png)
+
 
 ## Creating the Repository
 
@@ -500,9 +513,22 @@ git push
 
 ## Tools and Technologies used
 
+* VScode
 * Balsamiq - Wireframe design
 * Gimp - Image design and manipulation
+* w3.org - HTML Validator
+* w3.org - CSS Validator
+* Microsost Dev Tools - Lighthouse
+* WebAim - Web Accessability Evaluation Tool
+* GitHub
+* Django
+* Heroku
+* Cloudinary
 
 ## Credits
 
 * Code Institute - Codestar walkthrough project
+* Code Institute - Student support (Amy, Roo, John & Spencer)
+* Stack Overflow - Problem solving
+* Antonio Melé - Django 5 By Example
+* Copilot - Asssitance in design processes, clarification of information and debugging
