@@ -425,7 +425,7 @@ Leveraging GitHub Copilot for improving code performance was a game-changer for 
 
 ### Solution
 
-The low core in best practices was due to an insecure HTTP requests being made instead of HTTPS for Cloudinary access. To fix this, I updated all external resource URLs in the code to use HTTPS, ensuring secure communication and compliance with modern web standards. However, Lighthouse performance still indicated an issue. By using Copilot, I found that implementing a 'Content Security Policy' (CSP) could enforce HTTPS requests. Copilot's initial suggestion was:
+The low score in best practices was due to an insecure HTTP requests being made instead of HTTPS for Cloudinary access. To fix this, I updated all external resource URLs in the code to use HTTPS, ensuring secure communication and compliance with modern web standards. However, Lighthouse performance still indicated an issue. By using Copilot, I found that implementing a 'Content Security Policy' (CSP) could enforce HTTPS requests. Copilot's initial suggestion was:
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests;">
