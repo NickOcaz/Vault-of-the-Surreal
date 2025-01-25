@@ -234,12 +234,6 @@ GitHub project board was utilised for managing the tasks for this project.
 
 * Compliance with privacy policies and terms of service.
 
-
-
-
-
-
-
 ## Database Design
 
 Working with Copilot we formulated a datbase structue to enable functionality of our MVP.
@@ -421,12 +415,29 @@ Stack overflow offered a working suggestion whichj i corrected within the runtim
 
 This error was caused by an undefined variable being accessed in the JavaScript code. To resolve this issue, I reviewed the code to ensure all variables were properly defined before being used.
 
+### A.I. for debugging
+
+![Insecure Requests](readme-images/errors/insecure_requests.png)
+
+### Solution
+
+This error was due to insecure HTTP requests being made instead of HTTPS for Cloudinary access. To fix this, I updated all external resource URLs in the code to use HTTPS, ensuring secure communication and compliance with modern web standards. However, Lighthouse performance still indicated an issue. By using Copilot, I found that implementing a 'Content Security Policy' (CSP) could enforce HTTPS requests. Copilot's initial suggestion was:
+
+```html
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests;">
+```
+
+Despite this, the issue persisted. After several prompts, Copilot suggested adding 'block-all-mixed-content' to the policy, which resolved the issue. 
+
+```html
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
+```
+
 ## Testing
 
 text to go here
 
 ## Code Validation
-
 
 
 ### Wave
