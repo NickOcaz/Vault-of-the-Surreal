@@ -2,42 +2,35 @@
     font-family: 'MyCustomFont';
     src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
     font-display: swap;
-    letter-spacing: 0.2em;
 }
 
-.page-wrapper {
-    margin: auto 0;
+:root {
+    --white: #f1f1f1;
+    --green: #00b800;
+    --yellow: #ffa50a;
+    --red: #a30000;
+    --black: #050505;
+    --red-fade: linear-gradient(#050505, #1d0000, #050505);
+    --light-red-fade: linear-gradient(135deg, #a30000, #490000, #a30000);
+    --yellow-fade: linear-gradient(135deg, #3b3100, #ffa50a, #3b3100);
 }
+
+/* Removed unused .page-wrapper */
 
 .main-bg {
-    background-color: rgb(10, 10, 10);
-    color: rgb(255, 255, 255);
-    background: linear-gradient( rgb(0, 0, 0), rgb(29, 0, 0), rgb(0, 0, 0));
-    }  
+    background-color: var(--black);
+    color: var(--white);
+    background: var(--red-fade);
+}  
 
-    main {
-            max-width: 80%;
-            margin: 0 auto;
-            
-    }
-
-/* animate the hero image */
-.hero {
-    background-size: 100%; 
-    animation: zoom 15s infinite alternate;
-}
-@keyframes zoom {
-    0% {
-        background-size: 120%;
-    }
-    100% {
-        background-size: 100%;
-    }
+main {
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 /* headers */
 h1 {
-    color: rgb(92, 0, 0);
+    color: var(--red);
     font-family: 'MyCustomFont';
     font-size: 3rem;
     margin: auto 0;
@@ -46,18 +39,15 @@ h1 {
 
 h2{
     font-family: 'MyCustomFont';
-    color: #00a82a;
-    /* background: linear-gradient(135deg, rgb(24, 0, 0), rgb(0, 0, 0), rgb(20, 0, 0)); */
+    color: var(--green);
     margin: auto 0;
     text-align: center;
-    /*border-radius: 0.5rem 0.5rem;*/
-    /* padding: 1rem 1rem;*/
 }
 
 h3 {
     font-family: 'MyCustomFont';
-    color: #06c200;
-    background-color: #1A1A1A;
+    color: var(--green);
+    background-color: var(--black);
     margin: auto 0;
     text-align: center;
     padding: 1rem;
@@ -70,8 +60,8 @@ a {
 }
 
 .a-link {
-    background-color: rgb(139, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: var(--red);
+    color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -81,54 +71,45 @@ a {
 /* navbar */
 
 .navbar {
-    color: #ffffff;
-    background: linear-gradient(135deg, rgb(139, 0, 0), rgb(58, 0, 0), rgb(139, 0, 0));
+    color: var(--white);
+    background: var(--light-red-fade);
     font-size: large;
-    color: rgb(255, 255, 255);
     padding: 5px;
     margin-bottom: 1rem;
 }
 
 .nav-link {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     text-decoration: none;
 }
 
-.nav {
-    color: rgb(255, 255, 255);
-    background-color: rgb(78, 0, 0);
-    margin: auto 0;
-    vertical-align: middle;
-}
+/* Removed unused .nav */
 
 .nav-item {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     font-size: 1.2rem;
 }
 
-.text-end {
-    color: rgb(255, 255, 255);
-    font-size: 1.2rem;
-}
+/* Removed unused .text-end */
 
 .brand {
     font-family: 'MyCustomFont';
-    color: rgb(255, 255, 255);
+    color: var(--white);
     font-size: 32px;
 }
 
 /* buttons */
 .btn {
     margin-bottom: 16px;
-    color: #111111;
-    background-color: #ffd000;
+    color: var(--black);
+    background-color: var(--yellow);
     border: 0;
 }
 
 .btn.btn-edit, 
 .btn.btn-delete {
-    background-color: rgb(139, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: var(--red);
+    color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -137,23 +118,23 @@ a {
 
 .btn.btn-edit:hover, 
 .btn.btn-delete:hover {
-    background-color: rgb(208, 255, 0);
-    color: rgb(139, 0, 0);
+    background-color: var(--yellow);
+    color: var(--red);
 }
 
 .btn:hover {
-    color: #0f0f0f;
-    background-color: #ff0000;
+    color: var(--black);
+    background-color: var(--red);
     font-weight:bold;
 }
 
 p.approval {
-    color: #c50202;
+    color: var(--red);
 }
 
 p {
     font-size: 1.2rem;
-    color: rgb(139, 137, 0);
+    color: var(--yellow);
     margin: 1rem 2rem;
     text-align: center;
 }
@@ -165,18 +146,11 @@ ul {
     margin: 0;
 }
 
-/* images */
-.image-container {
-    border: 0px solid rgba(0, 0, 0, 0);
-}
-
-.container img {
-    padding:2rem;
-}
+/* Removed unused .image-container */
 
 .card {
-    background-color: rgba(0, 0, 0, 0.192) !important;
-    color: rgb(255, 255, 255) !important;
+    background-color: var(--black) !important;
+    color: var(--white) !important;
     border: 0 !important;
     border-radius: 10px !important;
 }
@@ -188,24 +162,24 @@ ul {
 
 /** Comments total */
 .text-secondary {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     font-size: 1.2rem;
     padding-left: 2rem;
 }
 
 .modal-body {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .text-warning {
-    color: rgb(226, 0, 0);
+    color: var(--red);
 }
 
 #modal, #modal-header, .modal-content {
-    background-color: rgb(0, 0, 0);
+    background-color: var(--black);
     animation: fadeImage 5s ease-in-out;
-    color: rgb(255, 255, 255);
+    color: var(--white);
 }
 
 #id_score{
@@ -219,17 +193,17 @@ form label {
 }
 
 .average_score {
-    color: #141414;
-    background: linear-gradient( rgb(109, 89, 1), rgb(189, 192, 0), rgb(109, 89, 1));
+    color: var(--black);
+    background: var(--yellow-fade);
     border-radius: 10px;
     padding: 5px;
     margin:1rem;
 }
 
 #review-wrapper {
-    background-color: #181818;
-    color: #ffd000;
-    padding: auto;
+    background-color: var(--black);
+    color: var(--yellow);
+    padding: 1rem;
     border-radius: 8px;
     margin-bottom: auto;
     display: flex;
@@ -237,11 +211,7 @@ form label {
     align-items: center;
 }
 
-/* navigation hands */
-#hands{
-    border: 0;
-    background-color: rgba(0, 0, 0, 0);
-}
+/* Removed unused #hands */
 
 @media (max-width: 768px) {
     .hero {
@@ -253,6 +223,6 @@ form label {
     .navbar-collapse {
         margin: auto;
         text-align: center;
-        }
     }
+}
 

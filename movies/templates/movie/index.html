@@ -30,7 +30,7 @@
                                 <a href="{% url 'post_detail' movie.slug %}" class="post-link">
                                     <div class="image-container">
                                         {% if "placeholder" in movie.featured_image.url %}
-                                        <img class="card-img-top" src="{% static 'images/default.png' %}" alt="Default movie placeholder image">
+                                        <img class="card-img-top" src="{% static 'images/default.webp' %}" alt="Default movie placeholder image">
                                         {% else %}
                                         <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                                         {% endif %}
