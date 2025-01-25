@@ -162,10 +162,6 @@ ul {
     border: 0px solid var(--black);
 }
 
-.container img {
-    padding:2rem;
-}
-
 .card {
     background-color: var(--black) !important;
     color: var(--white) !important;
@@ -187,7 +183,7 @@ ul {
 
 .modal-body {
     background-color: var(--black);
-    color: var(--white);
+    color: var (--white);
 }
 
 .text-warning {
