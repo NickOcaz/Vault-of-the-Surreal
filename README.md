@@ -445,13 +445,12 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 | HTML          | W3C Validator     |           |   Pass    |
 | CSS           | W3C CSS Validator | No errors |   Pass    |
 | Accessibility | WAVE Tool         | No errors |   Pass    |
-| Python        | PEP8              |           |           |
-
+| Python        | PEP8              | No errors |   Pass    |
 
 ### HTML
 ![W3C HTML Validation](readme-images/validation/w3c_html.png)
 
-### CSS
+### Jigsaw
 ![W3C CSS Validation](readme-images/validation/w3c_css.png)
 
 ### Wave
@@ -460,6 +459,31 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 ### Lighthouse
 
 ![Lighthouse](readme-images/validation/lighthouse.png)
+
+###
+
+### Pep8 standards
+
+To ensure all Python code meets PEP8 standards, the CI Python Linter has been utilized.
+
+![Linter](readme-images/validation/linter.png)
+
+
+## Browser Compatibility Testing
+
+To ensure that "Vault of the Surreal" provides a consistent user experience across different browsers, we conducted compatibility testing on various platforms. Below are the results:
+
+| Browser        |  Operating System | Result    | Pass/Fail |
+|----------------|------------------|-----------|------------|
+| Google Chrome  |   Windows 10     | No issues | Pass       |
+| Mozilla Firefox|   Windows 10     | No issues | Pass       |
+| Microsoft Edge |   Windows 10     | No issues | Pass       |
+| Safari         |   Iphone 13      | No issues | Pass       |
+| Safari         |   Ipad 6         | No issues | Pass       | 
+
+### Summary
+
+The application was tested on multiple browsers and operating systems to ensure compatibility and a seamless user experience. All tests passed successfully, indicating that the website functions correctly across different platforms.
 
 
 ## Creating the Repository
@@ -517,13 +541,14 @@ git push
 * Balsamiq - Wireframe design
 * Gimp - Image design and manipulation
 * w3.org - HTML Validator
-* w3.org - CSS Validator
+* w3.org - Jigsaw
 * Microsost Dev Tools - Lighthouse
 * WebAim - Web Accessability Evaluation Tool
 * GitHub
 * Django
 * Heroku
 * Cloudinary
+* CI Python Linter
 
 ## Credits
 
