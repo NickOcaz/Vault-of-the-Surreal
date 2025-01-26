@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -55,19 +55,6 @@ h3 {
 
 /* links */
 
-a {
-    text-decoration: none;
-    color: var(--red) ;
-}
-
-a:hover {
-    color: var(--green);
-}
-
-.nav-link:hover {
-    color: var(--yellow);
-}
-
 .a-link {
     background-color: var(--red);
     color: var(--white);
@@ -108,8 +95,7 @@ a:hover {
 }
 
 .brand:hover {
-    font-family: 'MyCustomFont';
-    background-color: #ffa50a6c;   
+    color: var(--yellow);
 }
 
 /* buttons */
@@ -163,11 +149,10 @@ ul {
 /* Removed unused .image-container */
 
 .card {
-    background-color: var(--black);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--white);
-    border: 0;
-    border-radius: 10px;
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    border: 0 !important;
+    border-radius: 10px !important;
 }
 
 .card-img-top:hover {
