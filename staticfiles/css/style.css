@@ -15,8 +15,6 @@
     --yellow-fade: linear-gradient(135deg, #3b3100, #ffa50a, #3b3100);
 }
 
-/* Removed unused .page-wrapper */
-
 .main-bg {
     background-color: var(--black);
     color: var(--white);
@@ -39,6 +37,7 @@ h1 {
 
 h2{
     font-family: 'MyCustomFont';
+    font-size: 2.5rem;
     color: var(--green);
     margin: auto 0;
     text-align: center;
@@ -51,6 +50,28 @@ h3 {
     margin: auto 0;
     text-align: center;
     padding: 1rem;
+}
+
+/* system message that fades out */
+
+#message {
+    color: var(--green);
+    text-shadow: 2px 2px 4px var(--black);
+    font-size: 2rem;
+    margin: auto 0;
+    text-align: center;
+    padding: 1rem;
+    animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }
 
 /* links */
@@ -92,14 +113,10 @@ a:hover {
     text-decoration: none;
 }
 
-/* Removed unused .nav */
-
 .nav-item {
     color: var(--white);
     font-size: 1.2rem;
 }
-
-/* Removed unused .text-end */
 
 .brand {
     font-family: 'MyCustomFont';
@@ -113,6 +130,7 @@ a:hover {
 }
 
 /* buttons */
+
 .btn {
     margin-bottom: 16px;
     color: var(--black);
@@ -154,13 +172,12 @@ p {
 }
 
 /* lists */
+
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-
-/* Removed unused .image-container */
 
 .card {
     background-color: var(--black);
@@ -176,6 +193,7 @@ ul {
 }
 
 /** Comments total */
+
 .text-secondary {
     color: var(--white);
     font-size: 1.2rem;
@@ -203,7 +221,6 @@ ul {
 }
 
 form label {
-    /* display: none; */
     font-size: 0px; /* hide the label*/
 }
 
@@ -231,6 +248,18 @@ form label {
     border: 0;
 }
 
+.page-link:hover {
+    background: var(--yellow-fade);
+    border: 0;
+}
+
+#hands {
+    margin-bottom: 1rem;}
+
+footer {
+    color: var(--white);
+}
+
 @media (max-width: 768px) {
     .hero {
         height: 100px; /* Adjust hero height for mobile view */
@@ -243,4 +272,3 @@ form label {
         text-align: center;
     }
 }
-

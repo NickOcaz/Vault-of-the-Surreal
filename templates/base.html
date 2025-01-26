@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 <head>
-  
+
     <title>Vault of the Surreal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicons -->
@@ -79,7 +79,7 @@
         </nav>
         <!-- displaying Django messages -->
         <div class="container">
-            <div class="row">
+            <div class="row" id="message">
                 <div class="col-md-8 offset-md-2 d-flex justify-content-center"></div>
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible

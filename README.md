@@ -100,9 +100,7 @@ MoSCoW Prioritization
 
 MoSCoW prioritization was used in this project to clearly define and manage the essential features and functionalities required for the "Vault of the Surreal" website. By categorizing tasks into Must-haves, Should-haves, Could-haves, and Won't-haves, the development team can focus on delivering the most critical aspects first, ensuring that the core objectives are met within the project timeline. This method helps in making informed decisions and efficiently allocating time to achieve a successful MVP launch.
 
-GitHub project board was utilised for managing the tasks for this project.
-
-![User Stories](readme-images/userstories.png)
+With CoPilot I was able to identigy core reuqirement for our user stories.
 
 * As a User, I want to register and log in so that I can access personalized features of the site.
 
@@ -123,6 +121,14 @@ GitHub project board was utilised for managing the tasks for this project.
 * As a User, I want to receive notifications for replies and interactions so that I stay engaged with the community.
 
 * As a User, I want to filter movies by genre, rating, and year so that I can easily find movies that interest me.
+
+* As a User, I want to be able to report posts if the do not align with the sites theme.
+
+GitHub project board was utilised for managing the tasks for this project.
+This approach allowed me to focus on the main features for the MVP, ensuring efficient time management and prioritization of tasks. By clearly defining the essential functionalities, I was able to manage and deliver a robust and user-friendly platform within the project timeline that fulfilled UX criteria.
+
+![User Stories](readme-images/userstories.png)
+
 
 ## User Registration and Login
 
@@ -203,6 +209,10 @@ GitHub project board was utilised for managing the tasks for this project.
 ### User Profiles
 
 * Basic user profile pages showing submitted reviews and ratings, details and image.
+
+### Contact admin
+
+* initiallty a questions or report form where the user can submit details for Admin to priorities or dismiss.
 
 # Prioritized Features for MVP
 

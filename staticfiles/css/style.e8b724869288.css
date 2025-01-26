@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -55,25 +55,39 @@ h3 {
 /* system message that fades out */
 
 #message {
+    font-family: 'MyCustomFont';
     color: var(--green);
     text-shadow: 2px 2px 4px var(--black);
     font-size: 2rem;
     margin: auto 0;
     text-align: center;
     padding: 1rem;
-    animation: fadeOut 5s forwards;
+animation: fadeOut 5s forwards;
 }
 
 @keyframes fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+    display: none;
+}
+}
+@keyframes slideAndFadeOut {
     0% {
         opacity: 1;
+        transform: translateX(0);
     }
     100% {
         opacity: 0;
-        display: none;
+        transform: translateX(100%);
     }
 }
 
+#message {
+    animation: slideAndFadeOut 10s forwards;
+}
 /* links */
 
 a {
