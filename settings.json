@@ -1,0 +1,6 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8",  // Ensure this points to the correct path if flake8 is not in your PATH
+    "python.linting.lintOnSave": true
+}

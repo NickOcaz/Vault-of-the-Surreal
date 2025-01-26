@@ -15,7 +15,8 @@ class MovieListView(generic.ListView):
         comment_count=Count('comments'),
         average_rating=Avg('ratings__score')
     ).order_by("year")
-    paginate_by = 6    
+    paginate_by = 6
+
 
 def post_detail(request, slug):
     queryset = Movie.objects.filter(status=1)
@@ -31,8 +32,9 @@ def post_detail(request, slug):
     user_rating = None
 
     if request.user.is_authenticated:
-        user_rating = Rating.objects.filter(movie=movie, user=request.user).first()
-        
+        user_rating = Rating.objects.filter(
+            movie=movie, user=request.user).first()
+
         if request.method == "POST":
             if 'comment_form' in request.POST:
                 comment_form = CommentForm(data=request.POST)
@@ -41,7 +43,9 @@ def post_detail(request, slug):
                     comment.author = request.user
                     comment.movie = movie
                     comment.save()
-                    messages.add_message(request, messages.SUCCESS, 'Comment submitted and awaiting approval')
+                    messages.add_message(
+                        request, messages.SUCCESS,
+                        'Comment submitted and awaiting approval')
                     return redirect('post_detail', slug=slug)
             elif 'rating_form' in request.POST:
                 rating_form = RatingForm(data=request.POST)
@@ -49,14 +53,18 @@ def post_detail(request, slug):
                     rating = rating_form.save(commit=False)
                     rating.user = request.user
                     rating.movie = movie
-                    existing_rating = Rating.objects.filter(movie=movie, user=request.user).first()
+                    existing_rating = Rating.objects.filter(
+                        movie=movie,
+                        user=request.user).first()
                     if existing_rating:
                         existing_rating.score = rating.score
                         existing_rating.save()
-                        messages.add_message(request, messages.SUCCESS, 'Rating updated')
+                        messages.add_message(
+                            request, messages.SUCCESS, 'Rating updated')
                     else:
                         rating.save()
-                        messages.add_message(request, messages.SUCCESS, 'Rating submitted')
+                        messages.add_message(
+                            request, messages.SUCCESS, 'Rating submitted')
                     return redirect('post_detail', slug=slug)
 
     comment_form = CommentForm()
@@ -71,6 +79,7 @@ def post_detail(request, slug):
         "average_rating": movie.average_rating(),
     })
 
+
 def comment_edit(request, slug, comment_id):
     movie = get_object_or_404(Movie, slug=slug, status=1)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -81,21 +90,29 @@ def comment_edit(request, slug, comment_id):
             comment.movie = movie
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment updated and awaiting approval')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment updated and awaiting approval')
             return redirect('post_detail', slug=slug)
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment')
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'Error updating comment')
     else:
         comment_form = CommentForm(instance=comment)
     return render(request, "movie/post_detail.html", {
         "movie": movie,
-        "comments": movie.comments.filter(approved=True).order_by('-created_on'),
+        "comments": movie.comments.filter(
+            approved=True).order_by('-created_on'),
         "comment_count": movie.comments.filter(approved=True).count(),
         "comment_form": comment_form,
         "rating_form": RatingForm(),
-        "user_rating": Rating.objects.filter(movie=movie, user=request.user).first(),
+        "user_rating": Rating.objects.filter(
+            movie=movie, user=request.user).first(),
         "average_rating": movie.average_rating(),
     })
+
 
 def comment_delete(request, slug, comment_id):
     queryset = Movie.objects.filter(status=1)
@@ -105,5 +122,6 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments')
+        messages.add_message(
+            request, messages.ERROR, 'You can only delete your own comments')
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))

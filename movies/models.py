@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Movie(models.Model):
     movieID = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
@@ -20,12 +21,16 @@ class Movie(models.Model):
     def average_rating(self):
         ratings = self.ratings.all()
         if ratings:
-            return round(sum(rating.score for rating in ratings) / len(ratings), 1)
+            return round(
+                sum(rating.score for rating in ratings) / len(ratings), 1)
         return 0
 
+
 class Comment(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
+    movie = models.ForeignKey(
+        Movie, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -36,9 +41,12 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
 
+
 class Rating(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="ratings")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="ratings")
+    movie = models.ForeignKey(
+        Movie, on_delete=models.CASCADE, related_name="ratings")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="ratings")
     score = models.IntegerField()
 
     class Meta:

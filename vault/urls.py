@@ -8,5 +8,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("movies.urls"), name="movie-urls"),
     path('<slug:slug>/delete_comment/<int:comment_id>',
-        views.comment_delete, name='comment_delete'),
+         views.comment_delete, name='comment_delete'),
 ]
