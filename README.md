@@ -604,3 +604,6 @@ git push
 * Stack Overflow - Problem solving
 * Antonio Melé - Django 5 By Example
 * Copilot - Asssitance in design processes, clarification of information and debugging
+* Slack Huddles - (Michael, Steve & Phoebe)
+* [Django Documentation](https://docs.djangoproject.com/en/5.1/)
+* [Python Documentation](https://docs.python.org/3/)

@@ -211,7 +211,10 @@ form label {
     align-items: center;
 }
 
-/* Removed unused #hands */
+.page-link {
+    background: var(--black);
+    border: 0;
+}
 
 @media (max-width: 768px) {
     .hero {
