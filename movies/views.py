@@ -6,6 +6,23 @@ from .models import Movie, Comment, Rating
 from .forms import CommentForm, RatingForm
 from django.db.models import Count, Avg
 
+from django.contrib.auth.decorators import login_required, user_passes_test
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def approve_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.approved = True
+    comment.save()
+    return redirect('home')
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def delete_comment(request, slug, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    return redirect('post_detail', slug=slug)
+
 
 class MovieListView(generic.ListView):
     model = Movie
