@@ -24,7 +24,6 @@
         action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <!--{{ form.as_p|safe }}-->
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}"
           value="{{ redirect_field_value }}" />
