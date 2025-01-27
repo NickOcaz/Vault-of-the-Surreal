@@ -559,6 +559,93 @@ To ensure that "Vault of the Surreal" provides a consistent user experience acro
 | Safari         |   Iphone 13      | No issues | Pass       |
 | Safari         |   Ipad 6         | No issues | Pass       | 
 
+
+### Manual Testing
+
+Manual testing involves manually checking the functionality, usability, responsiveness, and data management of the web application to ensure it meets the specified criteria. The following steps outline the manual testing process:
+
+1. **Functionality Testing**:
+   - Verify that all user registration, login, and logout functionalities work as expected.
+   - Check that CRUD operations (Create, Read, Update, Delete) are functioning correctly.
+   - Ensure that form validations and error messages are displayed appropriately.
+
+2. **Usability Testing**:
+   - Assess the user interface for ease of use and intuitive navigation.
+   - Verify that form fields are clearly labeled and provide helpful error messages.
+   - Ensure that the application provides a consistent user experience across different browsers and devices.
+
+3. **Responsiveness Testing**:
+   - Check that the application layout adjusts correctly on various screen sizes (e.g., desktop, tablet, mobile).
+   - Verify that all interactive elements (e.g., buttons, links) are easily accessible and usable on different devices.
+
+4. **Data Management Testing**:
+   - Ensure that data is correctly saved, retrieved, and displayed in the application.
+   - Verify that data integrity is maintained during CRUD operations.
+   - Check that sensitive data (e.g., passwords) is securely handled and stored.
+
+### Example Manual Test Case
+
+**Test Case: Movie Rating**
+
+- **Objective**: Verify that a user can successfully rate a movie.
+- **Steps**:
+   1. Log in to the application.
+   2. Navigate to a movie's detail page.
+   3. Select a rating from 1 to 10.
+   4. Submit the rating.
+- **Expected Result**: The rating is saved, and the average rating for the movie is updated. The user receives a confirmation message.
+PASS
+
+**Test Case: Submit Movie Review**
+
+- **Objective**: Verify that a user can successfully submit a review for a movie.
+- **Steps**:
+   1. Log in to the application.
+   2. Navigate to a movie's detail page.
+   3. Enter a review in the review text area.
+   4. Submit the review.
+- **Expected Result**: The review is saved and displayed on the movie's detail page. The user receives a confirmation message.
+PASS
+
+**Test Case: View Average Rating**
+
+- **Objective**: Verify that the average rating for a movie is correctly calculated and displayed.
+- **Steps**:
+   1. Navigate to a movie's detail page.
+   2. Check the displayed average rating.
+- **Expected Result**: The average rating is correctly calculated based on all user ratings and displayed on the movie's detail page.
+PASS
+
+**Test Case: User Registration**
+
+- **Objective**: Verify that a new user can successfully register an account.
+- **Steps**:
+  1. Navigate to the registration page.
+  2. Enter a valid username, email, and password.
+  3. Submit the registration form.
+- **Expected Result**: The user is redirected to the home page, and a confirmation message is displayed. The new user account is created in the database.
+PASS
+
+**Test Case: User Login**
+
+- **Objective**: Verify that an existing user can successfully log in.
+- **Steps**:
+  1. Navigate to the login page.
+  2. Enter a valid username and password.
+  3. Submit the login form.
+- **Expected Result**: The user is redirected to the home page, and a welcome message is displayed. The user is authenticated and logged in.
+PASS
+
+**Test Case: User Logout**
+
+- **Objective**: Verify that a logged-in user can successfully log out.
+- **Steps**:
+  1. Log in to the application.
+  2. Click the logout button.
+- **Expected Result**: The user is redirected to the login page, and a confirmation message is displayed. The user is logged out and the session is terminated.
+
+PASS
+
 ### Summary
 
 The application was tested on multiple browsers and operating systems to ensure compatibility and a seamless user experience. All tests passed successfully, indicating that the website functions correctly across different platforms.
