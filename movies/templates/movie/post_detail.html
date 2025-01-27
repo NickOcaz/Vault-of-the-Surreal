@@ -22,8 +22,7 @@
                 {% else %}
                 <img class="card-img-top" src="{{ movie.featured_image.url }}" alt="{{ movie.title }}">
                 {% endif %}
-
-                <!-- Rating Form -->
+                <!-- Rating form allows users to submit their rating for the movie -->
                 <div class="row justify-content-center">
                     <div class="col-md-12 card mb-4 mt-3">
                         <h2 class="text-center">Rate this Movie:</h2>
@@ -46,8 +45,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="container">
     <!-- Displaying Comments and Comment Form side by side -->
     <div class="row">
@@ -65,6 +62,12 @@
                 </div>
             </div>
             <div class="card-body">
+                <!--
+                This loop iterates over each comment in the 'comments' array. 
+                For each comment, it checks if the comment is approved or if the comment is authored by the current user. 
+                If the comment is not approved and not authored by the current user, it is hidden. 
+                Otherwise, the comment is displayed with additional options for the author to edit or delete their own comments.
+                -->
                 {% for comment in comments %}
                 <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
@@ -93,7 +96,7 @@
         </div>
         <div class="col-md-6 card mb-4 mt-3">
             <h3>Leave a Comment:</h3>
-            <div class="card-body">
+            <div class="card-body">                
                 {% if user.is_authenticated %}
                 <form method="post" id="commentForm">
                     {% csrf_token %}
@@ -108,9 +111,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -130,7 +131,6 @@
         </div>
     </div>
 </div>
-
 <!-- Thank You Modal -->
 <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -145,7 +145,5 @@
         </div>
     </div>
 </div>
-
 <script src="{% static 'js/comments.js' %}"></script>
-
 {% endblock %}

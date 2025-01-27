@@ -5,134 +5,162 @@
 {% url 'account_logout' as logout_url %}
 <!DOCTYPE html>
 <html class="h-100" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vault of the Surreal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon_io/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon_io/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon_io/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'images/favicon_io/site.webmanifest' %}">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- Search Engine Optimization (SEO) -->
-    <meta name="description" content="Vault of the Surreal - A place to explore surreal art and creativity.">
-    <meta name="keywords"
-        content="horror movies, classic movies, 80's horror, cult movies, movie discussion, film forum, thriller movies, indie films, movie reviews, film analysis, movie recommendations, cinema history">
-    <meta name="author" content="Vault of the Surreal">
-    <meta property="og:title" content="Vault of the Surreal">
-    <meta property="og:description" content="The place to explore and discuss 80s cult horror movies.">
-    <meta property="og:image" content="https://res.cloudinary.com/your-cloud-name/image/upload/v173/hero_red600px.webp">
-    <meta property="og:url" content="https://vault-of-the-surreal-d6172a25f374.herokuapp.com">
-    <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body class="d-flex flex-column h-100 main-bg">
-    <div class="page-wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Vault of the Surreal<i
-                            class="fas fa-home"></i></span> </a>
-                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    
-                    <span class="navbar-toggler-icon" id="nav-toggle">menu</span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    </ul>
-                    <span class="navbar-text text-muted">
-                        {% if user.is_authenticated %}
-                        <span class="text-end m-3">Logged in: {{ user }}</span>
-                        {% else %}
-                        <span class="text-end m-3"></span>
-                        {% endif %}
-                    </span>
-                    <!-- accounts -->
-                    <ul class="navbar-nav">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item list-unstyled">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item list-unstyled">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item list-unstyled">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vault of the Surreal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="{% static 'images/favicon_io/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="{% static 'images/favicon_io/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="{% static 'images/favicon_io/favicon-16x16.png' %}">
+        <link rel="manifest"
+            href="{% static 'images/favicon_io/site.webmanifest' %}">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous">
+        <!-- Search Engine Optimization (SEO) -->
+        <meta name="description"
+            content="Vault of the Surreal - A place to explore surreal art and creativity.">
+        <meta name="keywords"
+            content="horror movies, classic movies, 80's horror, cult movies, movie discussion, film forum, thriller movies, indie films, movie reviews, film analysis, movie recommendations, cinema history">
+        <meta name="author" content="Vault of the Surreal">
+        <meta property="og:title" content="Vault of the Surreal">
+        <meta property="og:description"
+            content="The place to explore and discuss 80s cult horror movies.">
+        <meta property="og:image"
+            content="https://res.cloudinary.com/your-cloud-name/image/upload/v173/hero_red600px.webp">
+        <meta property="og:url"
+            content="https://vault-of-the-surreal-d6172a25f374.herokuapp.com">
+        <!-- Content Security Policy -->
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body class="d-flex flex-column h-100 main-bg">
+        <div class="page-wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{% url 'home' %}"><span
+                            class="brand">Vault of the Surreal<i
+                                class="fas fa-home"></i></span> </a>
+                    <button class="navbar-toggler text-white" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarText" aria-controls="navbarText"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"
+                            id="nav-toggle">menu</span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        </ul>
+                        <span class="navbar-text text-muted">
+                            {% if user.is_authenticated %}
+                            <span class="text-end m-3">Logged in: {{ user
+                                }}</span>
+                            {% else %}
+                            <span class="text-end m-3"></span>
+                            {% endif %}
+                        </span>
+                        <!-- accounts -->
+                        <ul class="navbar-nav">
+                            {% if user.is_authenticated %}
+                            <li class="nav-item list-unstyled">
+                                <a
+                                    class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                    aria-current="page"
+                                    href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item list-unstyled">
+                                <a
+                                    class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                    aria-current="page"
+                                    href="{% url 'account_signup' %}">Register</a>
+                            </li>
+                            <li class="nav-item list-unstyled">
+                                <a
+                                    class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                    aria-current="page"
+                                    href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <!-- displaying Django messages -->
-        <div class="container">
-            <div class="row" id="message">
-                <div class="col-md-8 offset-md-2 d-flex justify-content-center"></div>
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible
+            </nav>
+            <!-- displaying Django messages -->
+            <div class="container">
+                <div class="row" id="message">
+                    <div
+                        class="col-md-8 offset-md-2 d-flex justify-content-center"></div>
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible
                 fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        {{ message | safe }}
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">(c) noc 1</p>
-        <p class="m-0 text-center text-white">Follow us:
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="text-white"
-                rel="noopener noreferrer">
-                <i class="fab fa-facebook-square ms-3" aria-hidden="true"></i>
-                <span class="sr-only">Facebook</span>
-            </a>
-            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter" class="text-white"
-                rel="noopener noreferrer">
-                <i class="fab fa-twitter-square ms-3" aria-hidden="true"></i>
-                <span class="sr-only">Twitter</span>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="text-white"
-                rel="noopener noreferrer">
-                <i class="fab fa-instagram-square ms-3" aria-hidden="true"></i>
-                <span class="sr-only">Instagram</span>
-            </a>
-            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="text-white"
-                rel="noopener noreferrer">
-                <i class="fab fa-youtube-square ms-3" aria-hidden="true"></i>
-                <span class="sr-only">YouTube</span>
-            </a>
-        </p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        <main class="flex-shrink-0 main-bg">
+            {% block content %}
+            <!-- Content Goes here -->
+            {% endblock content %}
+        </main>
+        <!-- Footer -->
+        <footer class="footer mt-auto py-3 dark-bg">
+            <p class="m-0 text-center text-white">(c) noc 1</p>
+            <p class="m-0 text-center text-white">Follow us:
+                <a href="https://www.facebook.com" target="_blank"
+                    aria-label="Facebook" class="text-white"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-facebook-square ms-3"
+                        aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://www.twitter.com" target="_blank"
+                    aria-label="Twitter" class="text-white"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-twitter-square ms-3"
+                        aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank"
+                    aria-label="Instagram" class="text-white"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-instagram-square ms-3"
+                        aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.youtube.com" target="_blank"
+                    aria-label="YouTube" class="text-white"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-youtube-square ms-3"
+                        aria-hidden="true"></i>
+                    <span class="sr-only">YouTube</span>
+                </a>
+            </p>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous">
         </script>
-
-    {% block extras %}
-    {% endblock %}
-
-</body>
-
+        {% block extras %}
+        {% endblock %}
+    </body>
 </html>

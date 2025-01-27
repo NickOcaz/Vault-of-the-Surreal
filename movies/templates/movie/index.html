@@ -7,13 +7,14 @@
             <img src="{% static 'images/VAULT-1.webp' %}" alt="Vault of the Surreal branding" class="img-fluid">
         </div>
     </div>
+    <!-- About us -->
     <div class="col-md-9">
         <h1>Welcome to HELL</H1>
         <p>This page is the ultimate destination for fans of 80's cult and best horror movies. Dive into the world of classic horror films that defined a generation and continue to thrill audiences today.</p>
         <p>Join our community to discuss your favorite classic horror movies, share your thoughts, and connect with fellow enthusiasts. Sign up now to be a part of the conversation and keep the spirit of 80's horror alive!</p>
     </div>
 </div>
-
+<!-- Section for displaying the list of movies -->
 <div class="container-fluid">
     <h2>The Vault</h2>
     <div class="row">
@@ -23,9 +24,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            
-                            <!-- Card images -->
-                            
+                            <!-- Movie images -->
                             <div class="image-flash">
                                 <a href="{% url 'post_detail' movie.slug %}" class="post-link">
                                     <div class="image-container">
@@ -40,11 +39,15 @@
                                 <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
                                 <p class= "average_score">Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
                                 <p>{{ movie.comments.count }} Comments</p>
+                                <!--
+                                This loop iterates over each element in the 'items' array. 
+                                For each element, it checks if the element meets a certain condition (specified by the 'condition' function). 
+                                If the condition is met, the element is added to the 'filteredItems' array.
+                                -->
                                 {% if not movie.is_approved and movie.author == user %}
                                 <p class="text-warning">This post is a draft and awaiting approval.</p>
                                 {% endif %}
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -56,6 +59,13 @@
             </div>
         </div>
     </div>
+    <!--
+    This section handles the pagination logic for the data.
+    It includes methods to calculate the total number of pages,
+    determine the current page, and fetch the data for the current page.
+    Pagination helps in breaking down large datasets into manageable chunks,
+    improving performance and user experience.
+    -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
