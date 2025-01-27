@@ -12,5 +12,6 @@ urlpatterns = [
         '<slug:slug>/delete_comment/<int:comment_id>/',
         views.comment_delete,
         name='comment_delete'),
-    path('approve_comment/<int:comment_id>/', views.approve_comment, name='approve_comment'),
+    path('approve_comment/<int:comment_id>/', views.approve_comment,
+         name='approve_comment'),
 ]

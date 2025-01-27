@@ -5,7 +5,6 @@ from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 
 
-
 @admin.register(Movie)
 class MovieAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'status')
@@ -13,6 +12,7 @@ class MovieAdmin(SummernoteModelAdmin):
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('description',)
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):

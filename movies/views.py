@@ -8,6 +8,7 @@ from django.db.models import Count, Avg
 
 from django.contrib.auth.decorators import login_required, user_passes_test
 
+
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def approve_comment(request, comment_id):
@@ -15,6 +16,7 @@ def approve_comment(request, comment_id):
     comment.approved = True
     comment.save()
     return redirect('home')
+
 
 @login_required
 @user_passes_test(lambda u: u.is_superuser)

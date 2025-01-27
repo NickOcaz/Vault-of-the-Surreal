@@ -67,8 +67,7 @@
                         </ul>
                         <span class="navbar-text text-muted">
                             {% if user.is_authenticated %}
-                            <span class="text-end m-3">Logged in: {{ user
-                                }}</span>
+                            <span class="text-end m-3">Logged in: {{ user.username }}</span>
                             {% else %}
                             <span class="text-end m-3"></span>
                             {% endif %}
