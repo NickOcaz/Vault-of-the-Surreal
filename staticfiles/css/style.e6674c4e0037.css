@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -27,7 +27,6 @@ main {
 }
 
 /* headers */
-
 h1 {
     color: var(--red);
     font-family: 'MyCustomFont';
@@ -99,7 +98,7 @@ a:hover {
     cursor: pointer;
 }
 
-/* navbar section */
+/* navbar */
 
 .navbar {
     color: var(--white);
@@ -184,8 +183,6 @@ ul {
     margin: 0;
 }
 
-/* animate poster */
-
 .card {
     background-color: var(--black);
     background-color: rgba(0, 0, 0, 0.5);
@@ -222,23 +219,13 @@ ul {
     color: var(--white);
 }
 
-/* Rating section */
-
 #id_score{
     width:60px;
     margin-bottom: 2.5rem;
-    font-size: 1.2rem;
 }
 
-.form-select { 
-    font-weight: bold;
-    background-color: var(--black);
-    color: var(--yellow);
-    height: auto;
-}
-
-.btn-rate {
-    height: 2.5rem;
+form label {
+    font-size: 12px; /* hide the label*/
 }
 
 .average_score {
@@ -247,14 +234,6 @@ ul {
     border-radius: 10px;
     padding: 5px;
     margin:1rem;
-}
-
-form label {
-    font-size: 1rem;
-}
-
-.requiredField{
-    display: none; /* hide the label*/
 }
 
 #review-wrapper {
@@ -273,8 +252,6 @@ form label {
     border: 0;
 }
 
-/* Pagination navigator*/
-
 .page-link:hover {
     background: var(--yellow-fade);
     border: 0;
@@ -283,13 +260,9 @@ form label {
 #hands {
     margin-bottom: 1rem;}
 
-    /* Footer */
-
 footer {
     color: var(--white);
 }
-
-/* Media Queries */
 
 @media (max-width: 768px) {
     .hero {
