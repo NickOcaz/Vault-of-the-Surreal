@@ -477,12 +477,28 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 ## Code Validation
 ### Result
 
-| Test Type     | Tool/Validator    | Result    | Pass/Fail |
-|---------------|-------------------|-----------|-----------|
-| HTML          | W3C Validator     |           |   Pass    |
-| CSS           | W3C CSS Validator | No errors |   Pass    |
-| Accessibility | WAVE Tool         | No errors |   Pass    |
-| Python        | PEP8              | No errors |   Pass    |
+| Test Type     | Tool/Validator    |                     Page                      | Pass/Fail |
+|---------------|-------------------|--Landin---|--login----|--logout---|-resister--|-----------|
+| HTML          | W3C Validator     | No errors | No errors | No errors |   errors  |   Pass    | 
+| CSS           | W3C CSS Validator | No errors | No errors | No errors | No errors |   Pass    |
+| Accessibility | WAVE Tool         | No errors | No errors | No errors | No errors |   Pass    |
+| Python        | PEP8              | No errors | No errors | No errors | No errors |   Pass    |
+
+Validation identified errors with HTML for the register accounts page. 
+
+Error: End tag p implied, but there were open elements.
+From line 123, column 30; to line 123, column 33
+
+Error: Unclosed element span.
+From line 123, column 7; to line 123, column 29
+
+Error: Stray end tag span.
+From line 123, column 282; to line 123, column 288
+
+Error: No p element in scope but a p end tag seen.
+From line 126, column 3; to line 126, column 6
+
+After thoroughly reviewing the code and consulting with student support, we concluded that the error is likely caused by django-allauth and is beyond our scope to fix. However, this does not negatively impact the functionality or security of the application.
 
 ### HTML
 ![W3C HTML Validation](readme-images/validation/w3c_html.png)
