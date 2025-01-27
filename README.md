@@ -478,15 +478,15 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 
 ### Result
 
-| Test Type     | Tool/Validator    | Page          | Pass/Fail |
+| Test Type     | Tool/Validator    | Page          |  Result   |
 |---------------|-------------------|---------------|-----------|
-| HTML          | W3C Validator     | Home,         | Pass      |
-|               |                   | Login,        | Pass      |
-|               |                   | Logout,       | Pass      |
-|               |                   | Registration  | Fail      |
-| CSS           | W3C CSS Validator | All Pages     | Pass      |
-| Accessibility | WAVE Tool         | All Pages     | Pass      |
-| Python        | PEP8              | All Code      | Pass      |
+| HTML          | W3C Validator     | Home,         | No errors |
+|               |                   | Login,        | No errors |
+|               |                   | Logout,       | No errors |
+|               |                   | Registration  | Error     |
+| CSS           | W3C CSS Validator | All Pages     | No errors |
+| Accessibility | WAVE Tool         | All Pages     | No errors |
+| Python        | PEP8              | All Code      | No errors |
 
 Validation identified errors with HTML for the register accounts page. 
 
