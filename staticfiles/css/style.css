@@ -129,6 +129,10 @@ a:hover {
     background-color: #ffa50a6c;   
 }
 
+.text-end {
+    color: var(--white);
+}
+
 /* buttons */
 
 .btn {
