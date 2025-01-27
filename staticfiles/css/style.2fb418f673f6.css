@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -287,32 +287,24 @@ footer {
 
 @media (max-width: 425px) {
     .card-title {
-        height: 4rem;
+        height: 80px;
+        margin: 20px;
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .hero {
         height: 100px;
         /* Adjust hero height for mobile view */
     }
 
     .card-title {
-        height: 4rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
+        height: 80px;
+        margin: 20px;
     }
-
-    .card-body p {
-        font-size: 10px;
-        padding: 0;
-    }
-    
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1000px) {
     .navbar-collapse {
         margin: auto;
         text-align: center;
@@ -320,14 +312,5 @@ footer {
 
     .card-body p {
         font-size: 1rem;
-    }
-
-    .card-body h3 {
-        font-size: 1rem;
-    }
-    
-    .card-title {
-        height: 3rem;
-        margin: 10px;
     }
 }

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -298,18 +298,19 @@ footer {
     }
 
     .card-title {
-        height: 4rem;
+        height: 7rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1rem;
-    }
-
-    .card-body p {
-        font-size: 10px;
-        padding: 0;
     }
     
+}
+
+
+@media (max-width: 900px) {
+    .card-title {
+        font-size: 1.2rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -327,7 +328,7 @@ footer {
     }
     
     .card-title {
-        height: 3rem;
+        height: 5rem;
         margin: 10px;
     }
 }

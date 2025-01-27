@@ -36,7 +36,7 @@
                                     </div>
                                     <h3 class="card-title">{{ movie.title }}</h3>
                                 </a>
-                                <p class="author">Director: {{ movie.director }} | {{ movie.year }} </p>
+                                <p class="author">{{ movie.director }} <br> {{ movie.year }} </p>
                                 <p class= "average_score">Average Rating: {{ movie.average_rating|floatformat:1 }}/10</p>
                                 <p>{{ movie.comments.count }} Comments</p>
                                 <!--
