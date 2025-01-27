@@ -42,8 +42,10 @@
             content="https://vault-of-the-surreal-d6172a25f374.herokuapp.com">
         <!-- Content Security Policy -->
         <meta http-equiv="Content-Security-Policy"
-            content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">
-        <!-- Custom CSS -->
+            content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https: 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https:; upgrade-insecure-requests; block-all-mixed-content;">
+            <!-- <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; upgrade-insecure-requests; block-all-mixed-content;">-->
+            <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body class="d-flex flex-column h-100 main-bg">
