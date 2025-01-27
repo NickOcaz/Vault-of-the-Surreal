@@ -477,12 +477,15 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 ## Code Validation
 ### Result
 
-| Test Type     | Tool/Validator    |               Page            | Pass/Fail |
-|---------------|-------------------|--home--|-login-|-lout--|-reg--|-----------|
-| HTML          | W3C Validator     |  Pass  | Pass  | Pass  | Pass |   Pass    | 
-| CSS           | W3C CSS Validator |  Pass  | Pass  | Pass  | Pass |   Pass    |
-| Accessibility | WAVE Tool         |  Pass  | Pass  | Pass  | Pass |   Pass    |
-| Python        | PEP8              |  Pass  | Pass  | Pass  | Pass |   Pass    |
+| Test Type     | Tool/Validator    | Page    | Pass/Fail |
+|---------------|-------------------|-H L O R-|-----------|
+| HTML          | W3C Validator     | P P P F | Pass      |
+| CSS           | W3C CSS Validator | Pass    | Pass      |
+| Accessibility | WAVE Tool         | Pass    | Pass      |
+| Python        | PEP8              | Pass    | Pass      |
+
+H = home|L = login | O = logout | R = registration
+P = Pass | F = Fail
 
 Validation identified errors with HTML for the register accounts page. 
 
