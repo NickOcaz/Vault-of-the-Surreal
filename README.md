@@ -475,17 +475,18 @@ Despite this, the issue persisted. After several prompts with knowing we were on
 ```
 
 ## Code Validation
+
 ### Result
 
-| Test Type     | Tool/Validator    | Page    | Pass/Fail |
-|---------------|-------------------|-H L O R-|-----------|
-| HTML          | W3C Validator     | P P P F | Pass      |
-| CSS           | W3C CSS Validator | Pass    | Pass      |
-| Accessibility | WAVE Tool         | Pass    | Pass      |
-| Python        | PEP8              | Pass    | Pass      |
-
-H = home|L = login | O = logout | R = registration
-P = Pass | F = Fail
+| Test Type     | Tool/Validator    | Page          | Pass/Fail |
+|---------------|-------------------|---------------|-----------|
+| HTML          | W3C Validator     | Home,         | Pass      |
+|               |                   | Login,        | Pass      |
+|               |                   | Logout,       | Pass      |
+|               |                   | Registration  | Fail      |
+| CSS           | W3C CSS Validator | All Pages     | Pass      |
+| Accessibility | WAVE Tool         | All Pages     | Pass      |
+| Python        | PEP8              | All Code      | Pass      |
 
 Validation identified errors with HTML for the register accounts page. 
 
