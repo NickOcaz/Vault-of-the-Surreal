@@ -49,6 +49,13 @@ Inspired by the 80's comedy horror 'House' (c) 1984 New World Pictures
 
 ![Fingers](readme-images/fingers.png)
 
+### Features
+
+![Feature 1](readme-images/feature1.png)
+![Feature 2](readme-images/feature2.png)
+![Feature 3](readme-images/feature3.png)
+
+
 ## Planning with A.I for UX
 
 Brainstorming with GitHub Copilot was instrumental in developing the foundations for this project. By leveraging Copilot's AI-driven suggestions, I was able to quickly generate ideas for key features, user stories, and database design. This collaborative approach ensured that I covered all essential aspects of the project, from user authentication to movie database management, while also considering future enhancements. Copilot's ability to provide context-aware recommendations significantly streamlined the planning process, allowing me to focus on creating a comprehensive and engaging platform for 80s horror movie enthusiasts.
