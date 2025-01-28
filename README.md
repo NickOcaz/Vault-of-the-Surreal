@@ -724,3 +724,20 @@ git push
 * Slack Huddles - (Michael, Steve & Phoebe)
 * [Django Documentation](https://docs.djangoproject.com/en/5.1/)
 * [Python Documentation](https://docs.python.org/3/)
+
+## Image Credits
+
+All images used for movies in this app are the ownership of their respective creators and distributors. Below is a list of the movies and their associated credits:
+
+* **Scanners (1981)**: Directed by David Cronenberg. Distributed by AVCO Embassy Pictures. Official movie cover.
+* **Creepshow (1982)**: Directed by George A. Romero. Distributed by Warner Bros. Official movie cover.
+* **The Thing (1982)**: Directed by John Carpenter. Distributed by Universal Pictures. Official movie cover.
+* **The Return of the Living Dead (1985)**: Directed by Dan O'Bannon. Distributed by Orion Pictures. Official movie cover.
+* **Demons (1985)**: Directed by Lamberto Bava. Distributed by DAC Film. Official movie cover.
+* **Re-Animator (1985)**: Directed by Stuart Gordon. Distributed by Empire Pictures. Official movie cover.
+* **From Beyond (1986)**: Directed by Stuart Gordon. Distributed by Empire Pictures. Official movie cover.
+* **Bad Taste (1987)**: Directed by Peter Jackson. Distributed by Endeavour Productions. Official movie cover.
+* **They Live (1988)**: Directed by John Carpenter. Distributed by Universal Pictures. Official movie cover.
+* **Phantasm II (1988)**: Directed by Don Coscarelli. Distributed by Universal Pictures. Official movie cover.
+* **Nightbreed (1989)**: Directed by Clive Barker. Distributed by 20th Century Fox. Official movie cover.
+* **Society (1989)**: Directed by Brian Yuzna. Distributed by Wild Street Pictures. Official movie cover
