@@ -49,7 +49,7 @@ The purpose of this 80s horror movie website, "Vault of the Surreal," is to crea
 21. [Deployment for project](#deployment-for-project)
     - [Gitpod](#gitpod)
     - [Heroku](#heroku)
-22. [Tools and Technologies used](#tools-and-technologies-used)
+22. [Tools and Technologies](#tools-and-technologies)
 23. [Credits](#credits)
 
 
@@ -772,7 +772,7 @@ To deploy the project on Heroku, follow these steps:
 
 
 
-## Tools and Technologies used
+## Tools and Technologies
 
 * VScode
 * Balsamiq - Wireframe design
