@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# movie model
 class Movie(models.Model):
     movieID = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
@@ -26,6 +27,7 @@ class Movie(models.Model):
         return 0
 
 
+# comment model
 class Comment(models.Model):
     movie = models.ForeignKey(
         Movie, on_delete=models.CASCADE, related_name="comments")
@@ -42,6 +44,7 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.author}"
 
 
+# rating model
 class Rating(models.Model):
     movie = models.ForeignKey(
         Movie, on_delete=models.CASCADE, related_name="ratings")

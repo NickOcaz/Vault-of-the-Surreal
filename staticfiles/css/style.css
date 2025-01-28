@@ -129,9 +129,15 @@ a:hover {
 
 .text-end {
     color: var(--white);
+    margin: 0 auto;
 }
 
 /* buttons */
+
+.navbar-toggler {
+    font-size: small;
+}
+
 .btn {
     margin-bottom: 16px;
     color: var(--black);

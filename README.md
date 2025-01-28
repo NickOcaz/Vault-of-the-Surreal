@@ -695,9 +695,36 @@ Navigate to your GitHub repository in your web browser and copy the link for you
 5.Now that the repo is open in our editor any addition to the code are submitted to the repo in the terminal with the commands
 
 git add .
-git commit -m "Initial commit" (details of update)
+git commit -m "Initial commit" (details of commit)
 
 git push
+
+### Heroku
+
+To deploy the project on Heroku, follow these steps:
+
+1. **Create a New App on Heroku**:
+   - Go to [Heroku](https://www.heroku.com/) and log in.
+   - Click the "New" button in the top right corner and select "Create new app".
+   - Enter a unique name for your app and choose your region.
+   - Click "Create app".
+
+   ![Heroku Deployment](readme-images/heroku1.png)
+
+3. **Connect to GitHub repo**:
+
+    ![Heroku Deployment](readme-images/heroku2.png)
+
+
+4. In settings, set config vars to replicate what is in env.py, secret key and database_url-
+
+![Heroku Deployment](readme-images/heroku3.png)
+
+5. Manual deploy on heroku - heroku-deploy.png
+
+![Heroku Deployment](readme-images/heroku4.png)
+
+
 
 ## Tools and Technologies used
 
@@ -717,7 +744,7 @@ git push
 ## Credits
 
 * Code Institute - Codestar walkthrough project
-* Code Institute - Student support (Amy, Roo, John & Spencer)
+* Code Institute - Student support (Amy, Vasi, Roo, John and Spencer)
 * Stack Overflow - Problem solving
 * Antonio Melé - Django 5 By Example
 * Copilot - Asssitance in design processes, clarification of information and debugging

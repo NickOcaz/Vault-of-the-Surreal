@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/Creepster-Regular.ttf') format('truetype');
+    src: url("/static/fonts/Creepster-Regular.2bcd50bbe90a.ttf") format('truetype');
     font-display: swap;
 }
 
@@ -116,6 +116,11 @@ a:hover {
     font-size: 1.2rem;
 }
 
+navbar-toggler {
+    width: 100px;
+    color: var(--black);
+}
+
 .brand {
     font-family: 'MyCustomFont';
     color: var(--white);
@@ -129,15 +134,9 @@ a:hover {
 
 .text-end {
     color: var(--white);
-    margin: 0 auto;
 }
 
 /* buttons */
-
-.navbar-toggler {
-    font-size: small;
-}
-
 .btn {
     margin-bottom: 16px;
     color: var(--black);
